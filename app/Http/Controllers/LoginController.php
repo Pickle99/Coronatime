@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 class LoginController extends Controller
 {
-	public function index()
+	public function create()
 	{
-		return view('components.layout');
+		return view('components.login');
 	}
 }
