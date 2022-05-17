@@ -16,5 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/login', [LoginController::class, 'create'])->name('login');
+Route::get('/reset-password', [LoginController::class, 'edit'])->name('reset.password');
 
 Route::get('/register', [RegisterController::class, 'create'])->name('register');

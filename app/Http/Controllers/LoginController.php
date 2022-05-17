@@ -8,4 +8,9 @@ class LoginController extends Controller
 	{
 		return view('components.login');
 	}
+
+	public function edit()
+	{
+		return view('components.reset-password');
+	}
 }
