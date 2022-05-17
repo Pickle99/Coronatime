@@ -7,12 +7,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
 
 <body class="font-inter">
-{{--<x-panel-login>--}}
-{{--    <x-panel-login-flex>--}}
+<div class="absolute mt-20">
+    <div class="p-10"><a class="" href="/language/en">@lang('translate.en')</a></div>
+    <div class="p-10"><a href="/language/ka">@lang('translate.ka')</a></div>
+</div>
         {{ $slot }}
-{{--    </x-panel-login-flex>--}}
-{{--<x-panel-vaccine-img>--}}
-{{--    <img class="absolute inset-0 h-full w-full object-cover" src="{{asset('storage/images/vaccines.png')}}" alt="">--}}
-{{--</x-panel-vaccine-img>--}}
-{{--</x-panel-login>--}}
+
+
 </body>

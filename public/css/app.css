@@ -448,6 +448,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 24rem;
   margin-right: 24rem;
 }
+.mx-20 {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
 .mr-40 {
   margin-right: 10rem;
 }
@@ -612,6 +616,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
+}
+.p-20 {
+  padding: 5rem;
+}
+.p-10 {
+  padding: 2.5rem;
 }
 .py-12 {
   padding-top: 3rem;

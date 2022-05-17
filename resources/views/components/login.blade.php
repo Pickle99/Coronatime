@@ -5,9 +5,9 @@
            <div class="mx-auto w-full max-w-sm lg:w-96">
                <div>
                    <img class="h-12 mb-20 w-auto" src="{{asset('storage/images/coronalogo.png')}}" alt="Workflow">
-                   <h2 class="mb-4 text-4xl font-bold text-black">Welcome back</h2>
+                   <h2 class="mb-4 text-4xl font-bold text-black">@lang('translate.Welcome back')</h2>
                    <p class="mt-2 text-lg text-gray-400">
-                       Welcome back! Please enter your details
+                       @lang('translate.Welcome back! Please enter your details')
                    </p>
                </div>
 
@@ -15,38 +15,40 @@
                    <div class="mt-6">
                        <form action="#" method="POST" class="space-y-6">
                            <div>
-                               <label for="username" class="block text-sm font-bold text-black"> Username </label>
+                               <label for="username" class="block text-sm font-bold text-black"> @lang('translate.username') </label>
                                <div class="mt-1">
-                                   <input id="username" placeholder="Enter unique username or email" name="username" type="text" autocomplete="username" required class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                   <input id="username" placeholder="@lang('translate.Enter unique username or email')" name="username" type="text" autocomplete="username" required class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                </div>
                            </div>
 
                            <div class="space-y-1">
-                               <label for="password" class="block text-sm font-bold text-black"> Password </label>
+                               <label for="password" class="block text-sm font-bold text-black"> @lang('translate.password') </label>
                                <div class="mt-1">
-                                   <input id="password" placeholder="Fill in password" name="password" type="password" autocomplete="current-password" required class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                   <input id="password" placeholder="@lang('translate.Fill in password')" name="password" type="password" autocomplete="current-password" required class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                </div>
                            </div>
 
                            <div class="flex items-center justify-between">
                                <div class="flex items-center">
                                    <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
-                                   <label for="remember-me" class="ml-2 block text-sm text-gray-900"> Remember me </label>
+                                   <label for="remember-me" class="ml-2 block text-sm text-gray-900">@lang('translate.remember me') </label>
                                </div>
 
                                <div class="text-sm">
-                                   <a href="/reset-password" class="font-medium text-indigo-600 hover:text-indigo-500"> Forgot your password? </a>
+                                   <a href="/reset-password" class="font-medium text-indigo-600 hover:text-indigo-500">@lang('translate.forgot your password?')</a>
                                </div>
                            </div>
 
-                           <x-submit-button>LOG IN</x-submit-button>
+                           <x-submit-button>@lang('translate.log in')</x-submit-button>
                        </form>
                        <p class="mt-2 text-center text-sm text-gray-400">
-                           Don't have an account?
-                           <a href="/register" class="font-medium text-black hover:text-indigo-500"> Sign up for free </a>
+                            @lang("translate.'Don't have an account?'")
+                           <a href="/register" class="font-medium text-black hover:text-indigo-500"> @lang('translate. Sign up for free') </a>
                        </p>
                    </div>
                </div>
+           </div>
+           <div>
            </div>
        </x-panel-login-flex>
        <x-vaccine-img></x-vaccine-img>
