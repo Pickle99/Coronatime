@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <link href="{{asset('css/app.css')}}" rel="stylesheet">
         <title>Laravel</title>
 
         <!-- Fonts -->
@@ -16,8 +16,8 @@
 
         <style>
             body {
-                font-family: 'Nunito', sans-serif;
-            }
+                 font-family: 'Nunito', sans-serif}
+
         </style>
     </head>
     <body class="antialiased">
