@@ -2,19 +2,19 @@
     <div class="mt-10 mx-auto w-full max-w-sm lg:w-96">
         <div class="flex justify-center"><img class="h-12 mb-20 h-auto" src="{{asset('storage/images/coronalogo.png')}}" alt="Workflow"></div>
         <div>
-            <h2 class="text-center  mt-24 mb-14 text-4xl font-bold text-black">@lang('translate.Reset password')</h2>
+            <h2 class="text-center  mt-24 mb-14 text-4xl font-bold text-black"> {{__("translate.Reset password")}}</h2>
         </div>
 
         <div class="mt-8">
             <div class="mt-6">
                 <form action="#" method="POST" class="space-y-6">
                     <div>
-                        <label for="email" class="block text-sm font-bold text-black"> @lang('translate.email') </label>
+                        <label for="{{__("translate.email")}}" class="block text-sm font-bold text-black"> {{__("translate.email")}} </label>
                         <div class="mt-1">
-                            <input id="email" placeholder="@lang('translate.email')" name="email" type="email" autocomplete="email" required class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                            <input id="{{__("translate.email")}}" placeholder="{{__("translate.email")}}" name="{{__("translate.email")}}" type="email" class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                         </div>
                     </div>
-                  <x-submit-button class="mt-14">@lang('translate.Reset password')</x-submit-button>
+                  <x-submit-button class="mt-14">{{__("translate.Reset password")}}</x-submit-button>
                 </form>
             </div>
         </div>
