@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ValidationRules;
+use App\Http\Requests\RegisterValidation;
 use App\Models\User;
 
 class RegisterController extends Controller
@@ -12,11 +12,11 @@ class RegisterController extends Controller
 		return view('components.register');
 	}
 
-	public function store(ValidationRules $request)
+	public function store(RegisterValidation $request)
 	{
 //		$user = User::create($attributes);
 //		auth()->login($user);
-		$validated = $request->validated();
+//		$validated = $request->validated();
 //		$user = User::create($validated);
 //		auth()->login($user);
 		// Retrieve a portion of the validated input data...

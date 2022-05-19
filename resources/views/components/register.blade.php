@@ -14,15 +14,27 @@
                 <div class="mt-6">
                     <form action="/register" method="POST" class="space-y-6">
                         @csrf
-                        <div>
-                            <label for="{{__('translate.username')}}" class="block text-sm font-bold text-black">{{__('translate.username')}}</label>
-                            <div class="mt-1">
-                                <input id="{{__('translate.username')}}" placeholder="{{__('translate.Enter unique username')}}" name="{{__('translate.username')}}" type="text" class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                       @if(app()->getLocale() === 'en')
+                            <div>
+                                <label for="{{__('translate.username', ['name' => 'Username'])}}" class="block text-sm font-bold text-black">{{__('translate.username', ['name' => 'Username'])}}</label>
+                                <div class="mt-1">
+                                    <input id="{{__('translate.username', ['name' => 'Username'])}}" placeholder="{{__('translate.Enter unique username')}}" name="{{__('translate.username', ['name' => 'Username'])}}" type="text" class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                </div>
+                                @error(__('translate.username', ['name' => 'Username']))
+                                <p class="text-red-500 text-lg mt-1">{{__("translate.$message")}}</p>
+                                @enderror
                             </div>
-                            @error(__('translate.username'))
-                            <p class="text-red-500 text-lg mt-1">{{__("translate.$message")}}</p>
-                            @enderror
-                        </div>
+                        @else
+                            <div>
+                                <label for="{{__('translate.username', ['name' => 'მომხმარებელი'])}}" class="block text-sm font-bold text-black">{{__('translate.username', ['name' => 'მომხმარებლის სახელი'])}}</label>
+                                <div class="mt-1">
+                                    <input id="{{__('translate.username', ['name' => 'მომხმარებელი'])}}" placeholder="{{__('translate.Enter unique username')}}" name="{{__('translate.username', ['name' => 'მომხმარებელი'])}}" type="text" class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                </div>
+                                @error(__('translate.username', ['name'=>'მომხმარებელი']))
+                                <p class="text-red-500 text-lg mt-1">{{__("translate.$message")}}</p>
+                                @enderror
+                            </div>
+                        @endif
 
                         <div>
                             <label for="{{__('translate.email')}}" class="block text-sm font-bold text-black">{{__('translate.email')}}</label>
@@ -44,15 +56,27 @@
                             @enderror
                         </div>
 
-                        <div class="space-y-1">
-                            <label for="{{__('translate.Repeat password')}}" class="block text-sm font-bold text-black"> {{__('translate.Repeat password')}} </label>
-                            <div class="mt-1">
-                                <input id="{{__('translate.Repeat password')}}" placeholder="{{__('translate.Repeat password')}}" name="{{__('translate.Repeat password')}}" type="password" class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        @if(app()->getLocale() === 'en')
+                            <div>
+                                <label for="{{__('translate.repeat password', ['name' => 'repeat'])}}" class="block text-sm font-bold text-black">{{__('translate.repeat password', ['name' => 'Repeat password'])}}</label>
+                                <div class="mt-1">
+                                    <input id="{{__('translate.repeat password', ['name' => 'repeat'])}}" placeholder="{{__('translate.repeat password', ['name' => 'Repeat password'])}}" name="{{__('translate.repeat password', ['name' => 'repeat'])}}" type="text" class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                </div>
+                                @error(__('translate.repeat password', ['name' => 'repeat']))
+                                <p class="text-red-500 text-lg mt-1">{{__("translate.$message")}}</p>
+                                @enderror
                             </div>
-                            @error(__('translate.Repeat password'))
-                            <p class="text-red-500 text-lg mt-1">{{__("translate.$message")}}</p>
-                            @enderror
-                        </div>
+                        @else
+                            <div>
+                                <label for="{{__('translate.repeat password', ['name' => 'გაიმეორეთ'])}}" class="block text-sm font-bold text-black">{{__('translate.repeat password', ['name' => 'გაიმეორეთ პაროლი'])}}</label>
+                                <div class="mt-1">
+                                    <input id="{{__('translate.repeat password', ['name' => 'გაიმეორეთ'])}}" placeholder="{{__('translate.repeat password', ['name' => 'გაიმეორეთ პაროლი'])}}" name="{{__('translate.repeat password', ['name' => 'გაიმეორეთ'])}}" type="text" class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                </div>
+                                @error(__('translate.repeat password', ['name'=>'გაიმეორეთ']))
+                                <p class="text-red-500 text-lg mt-1">{{__("translate.$message")}}</p>
+                                @enderror
+                            </div>
+                        @endif
 
                         <div class="flex items-center justify-between">
                             <div class="flex items-center">
