@@ -3,10 +3,10 @@
 return [
 	'en'                                                                                             => 'ენ',
 	'ka'                                                                                             => 'კა',
-	'username'                                                                                       => ':name',
+	'username'                                                                                       => 'მომხმარებლის სახელი',
 	'email'                                                                                          => 'ელ-ფოსტა',
 	'password'                                                                                       => 'პაროლი',
-	'repeat password'                                                                                => ':name',
+	'repeat password'                                                                                => 'გაიმეორეთ პაროლი',
 	'Welcome back! Please enter your details'                                                        => 'კეთილი იყოს თქვენი დაბრუნება! გთხოვთ შეიყვანოთ თქვენი დეტალები',
 	'Welcome back'                                                                                   => 'კეთილი იყოს თქვენი დაბრუნება',
 	'remember me'                                                                                    => 'დამახსოვრება',
@@ -32,4 +32,7 @@ return [
 	'Repeat password is required'                                                                    => 'პაროლები არ ემთხვევა',
 	'Password must contain at least 3 symbols'                                                       => 'პაროლი უნდა შეიცავდეს მინიმუმ 3 სიმბოლოს',
 	'Username must contain at least 3 symbols'                                                       => 'მომხმარებლის სახელი უნდა შეიცავდეს მინიმუმ 3 სიმბოლოს',
+	'Your provided credentials could not be verified.'                                               => 'თქვენი შეყვანილი მონაცემები არასწორია',
+	'Username already exists'                                                                        => 'მომხმარებლის სახელი დაკავებულია',
+	'Email already exists'                                                                           => 'ელ-ფოსტა დაკავებულია',
 ];

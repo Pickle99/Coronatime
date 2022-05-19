@@ -18,8 +18,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('language/{locale}', [LanguageController::class, 'update'])->name('language');
 
-Route::get('login', [LoginController::class, 'create'])->name('login');
+Route::get('login', [LoginController::class, 'create'])->name('login.create')->middleware('guest');
+Route::post('sessions', [LoginController::class, 'store'])->name('login.store');
 Route::get('reset-password', [LoginController::class, 'edit'])->name('reset.password');
 
-Route::get('register', [RegisterController::class, 'create'])->name('register.create');
+Route::get('register', [RegisterController::class, 'create'])->name('register.create')->middleware('guest');
 Route::post('register', [RegisterController::class, 'store'])->name('register.store');
+
+//test
+Route::get('dashboard', [LoginController::class, 'check'])->middleware('auth');
+Route::post('logout', [LoginController::class, 'see'])->middleware('auth');

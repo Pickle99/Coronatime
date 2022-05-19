@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\RegisterValidation;
+use App\Http\Requests\StoreRegisterRequest;
 use App\Models\User;
 
 class RegisterController extends Controller
@@ -12,16 +12,16 @@ class RegisterController extends Controller
 		return view('components.register');
 	}
 
-	public function store(RegisterValidation $request)
+	public function store(StoreRegisterRequest $request)
 	{
-//		$user = User::create($attributes);
-//		auth()->login($user);
-//		$validated = $request->validated();
-//		$user = User::create($validated);
-//		auth()->login($user);
+		$validated = $request->validated();
+		$validated['password'] = bcrypt($validated['password']);
+		$user = User::create($validated);
+		auth()->login($user);
+
 		// Retrieve a portion of the validated input data...
 //		$validated = $request->safe()->only(['username', 'email']);
 //		$validated = $request->safe()->except(['name', 'email']);
-		return redirect('login');
+		return redirect('/dashboard');
 	}
 }

@@ -3,7 +3,7 @@
 return [
 	'en'                                                                                             => 'en',
 	'ka'                                                                                             => 'ka',
-	'username'                                                                                       => ':Name',
+	'username'                                                                                       => 'Username',
 	'email'                                                                                          => 'Email',
 	'password'                                                                                       => 'Password',
 	'Welcome back! Please enter your details'                                                        => 'Welcome back! Please enter your details',
@@ -24,7 +24,7 @@ return [
 	'Enter unique username or email'                                                                 => 'Enter unique username or email',
 	'Enter your email'                                                                               => 'Enter your email',
 	'Fill in password'                                                                               => 'Fill in password',
-	'repeat password'                                                                                => ':name',
+	'repeat password'                                                                                => 'Repeat password',
 	'Already have an account?'                                                                       => 'Already have an account?',
 	'Username is required'                                                                           => 'Username is required',
 	'Email is required'                                                                              => 'Email is required',
@@ -32,4 +32,7 @@ return [
 	'Repeat password is required'                                                                    => 'Passwords dont match',
 	'Password must contain at least 3 symbols'                                                       => 'Password must contain at least 3 symbols',
 	'Username must contain at least 3 symbols'                                                       => 'Username must contain at least 3 symbols',
+	'Your provided credentials could not be verified.'                                               => 'Your provided credentials could not be verified.',
+	'Username already exists'                                                                        => 'Username already exists',
+	'Email already exists'                                                                           => 'Email already exists',
 ];

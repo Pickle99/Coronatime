@@ -13,19 +13,27 @@
 
                <div class="mt-8">
                    <div class="mt-6">
-                       <form action="#" method="POST" class="space-y-6">
+                       <form method="POST"  action="/sessions" class="space-y-6">
+                           @csrf
                            <div>
-                               <label for="{{__('translate.username')}}" class="block text-sm font-bold text-black"> {{__('translate.username')}} </label>
+                               <label for="username" class="block text-sm font-bold text-black">{{__('translate.username', ['name' => 'Username'])}}</label>
                                <div class="mt-1">
-                                   <input id="{{__('translate.username')}}" placeholder="{{__('translate.Enter unique username or email')}}" name="{{__('translate.username')}}" type="text" class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                   <input id="username" value="{{old('username')}}" placeholder="{{__('translate.Enter unique username or email')}}" name="username" type="text" class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                </div>
+                               @error("username")
+                               <p class="text-red-500 text-lg mt-1">{{__("translate.$message")}}</p>
+                               @enderror
                            </div>
 
-                           <div class="space-y-1">
-                               <label for="{{__('translate.password')}}" class="block text-sm font-bold text-black"> {{__('translate.password')}} </label>
+
+                           <div>
+                               <label for="password" class="block text-sm font-bold text-black">{{__('translate.password')}}</label>
                                <div class="mt-1">
-                                   <input id="{{__('translate.password')}}" placeholder="{{__('translate.Fill in password')}}" name="{{__('translate.password')}}" type="password" class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                   <input id="password" value="{{old('password')}}" placeholder="{{__('translate.Fill in password')}}" name="password" type="password" class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                </div>
+                               @error('password')
+                               <p class="text-red-500 text-lg mt-1">{{__("translate.$message")}}</p>
+                               @enderror
                            </div>
 
                            <div class="flex items-center justify-between">
