@@ -24,26 +24,17 @@ class StoreLoginRequest extends FormRequest
 	public function rules()
 	{
 		return [
-			$this->username()                               => 'required|min:3',
-			'password'                                      => 'required',
+			'user'                => 'required|min:3',
+			'password'            => 'required',
 		];
 	}
 
 	public function messages()
 	{
 		return [
-			'username.required'    => 'Username is required',
-			'username.min'         => 'Username must contain at least :min symbols',
-			'email.required'       => 'Email is required',
+			'user.required'        => 'Username is required',
+			'user.min'             => 'Username must contain at least :min symbols',
 			'password.required'    => 'Password is required',
 		];
-	}
-
-	public function username()
-	{
-		$login = request()->input('username');
-		$field = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
-		request()->merge([$field => $login]);
-		return $field;
 	}
 }

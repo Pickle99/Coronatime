@@ -18,9 +18,9 @@
                            <div>
                                <label for="username" class="block text-sm font-bold text-black">{{__('translate.username', ['name' => 'Username'])}}</label>
                                <div class="mt-1">
-                                   <input id="username" value="{{old('username')}}" placeholder="{{__('translate.Enter unique username or email')}}" name="username" type="text" class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                   <input id="username" value="{{old('user')}}" placeholder="{{__('translate.Enter unique username or email')}}" name="user" type="text" class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                </div>
-                               @error("username")
+                               @error("user")
                                <p class="text-red-500 text-lg mt-1">{{__("translate.$message")}}</p>
                                @enderror
                            </div>

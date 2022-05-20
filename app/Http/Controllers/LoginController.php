@@ -12,16 +12,6 @@ class LoginController extends Controller
 		return view('components.login');
 	}
 
-//	public function store(StoreLoginRequest $request)
-//	{
-//		$validated = $request->validated();
-//
-//		// Retrieve a portion of the validated input data...
-	////		$validated = $request->safe()->only(['username', 'email']);
-	////		$validated = $request->safe()->except(['name', 'email']);
-//		return redirect('/dashboard');
-//	}
-
 	public function edit()
 	{
 		return view('components.reset-password');
@@ -40,29 +30,19 @@ class LoginController extends Controller
 
 	public function store(StoreLoginRequest $request)
 	{
-		$validated = $request->validated();
+		$field = filter_var($request->user, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
 
-//		$attributes = request()->validate([
-//			$this->username()   => 'required|min:3',
-//			'password'          => 'required',
-//		]);
-//		dd(!auth()->attempt($attributes));
-		if (!auth()->attempt($validated))
+		if (!auth()->attempt([
+			$field    => $request->user,
+			'password'=> $request->password,
+		]))
 		{
 			throw ValidationException::withMessages([
-				'username' => 'Your provided credentials could not be verified.',
+				'user' => 'Your provided credentials could not be verified.',
 			]);
 		}
 
 		session()->regenerate();
 		return redirect('/dashboard');
-	}
-
-	public function username()
-	{
-		$login = request()->input('username');
-		$field = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
-		request()->merge([$field => $login]);
-		return $field;
 	}
 }
