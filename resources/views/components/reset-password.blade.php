@@ -10,16 +10,7 @@
                 <form action="{{route('password.update')}}" method="POST" class="space-y-6">
                     @csrf
                     <input type="hidden" name="token" value="{{$token}}"/>
-{{--                    <input type="hidden" name="email" value="{{$user->email}}"/>--}}
-                    <div>
-                        <label for="email" class="block text-sm font-bold text-black"> {{__("translate.email")}} </label>
-                        <div class="mt-1">
-                            <input id="email" placeholder="{{__("translate.email")}}" value="{{}}" name="email" type="email" class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                        </div>
-                        @error('email')
-                        <p class="text-red-500 text-lg mt-1">{{__("translate.$message")}}</p>
-                        @enderror
-                    </div>
+                    <input type="hidden" name="email" value="{{$user}}"/>
                     <div>
                         <label for="password" class="block text-sm font-bold text-black"> {{__("translate.new password")}} </label>
                         <div class="mt-1">

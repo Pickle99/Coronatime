@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreResetRequest;
-use App\Models\User;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -35,12 +34,11 @@ class ResetController extends Controller
 		return view('components.email-verify');
 	}
 
-	public function edit($token)
+	public function edit($token, $user)
 	{
-//		$user = User::find($id);
 		return view('components.reset-password', [
-			'token' => $token, ]);
-//			'user'  => $user, ]);
+			'token'   => $token,
+			'user'    => $user, ]);
 	}
 
 	public function update(Request $request)

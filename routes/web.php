@@ -34,5 +34,5 @@ Route::get('email/verify/{id}/{hash}', [UserController::class, 'verified'])->mid
 Route::get('dashboard', [AuthController::class, 'check'])->middleware(['auth', 'verified']);
 Route::post('logout', [AuthController::class, 'see'])->middleware('auth');
 
-Route::get('/reset-password/{token}', [ResetController::class, 'edit'])->middleware('guest')->name('password.reset');
+Route::get('/reset-password/{token}={email}', [ResetController::class, 'edit'])->middleware('guest')->name('password.reset');
 Route::post('/reset-password', [ResetController::class, 'update'])->middleware('guest')->name('password.update');
