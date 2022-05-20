@@ -440,11 +440,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: auto;
   margin-right: auto;
 }
-.mt-20 {
-  margin-top: 5rem;
+.mt-10 {
+  margin-top: 2.5rem;
 }
 .mb-20 {
   margin-bottom: 5rem;
+}
+.mt-40 {
+  margin-top: 10rem;
+}
+.mt-6 {
+  margin-top: 1.5rem;
+}
+.mt-20 {
+  margin-top: 5rem;
 }
 .mb-4 {
   margin-bottom: 1rem;
@@ -455,9 +464,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-8 {
   margin-top: 2rem;
 }
-.mt-6 {
-  margin-top: 1.5rem;
-}
 .mt-1 {
   margin-top: 0.25rem;
 }
@@ -466,9 +472,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mr-40 {
   margin-right: 10rem;
-}
-.mt-10 {
-  margin-top: 2.5rem;
 }
 .mt-24 {
   margin-top: 6rem;
@@ -491,11 +494,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-12 {
   height: 3rem;
 }
-.h-4 {
-  height: 1rem;
-}
 .h-auto {
   height: auto;
+}
+.h-4 {
+  height: 1rem;
 }
 .h-full {
   height: 100%;
@@ -600,13 +603,13 @@ Ensure the default browser behavior of the `hidden` attribute.
 .font-inter {
   font-family: 'Inter', sans-serif;
 }
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 .text-sm {
   font-size: 0.875rem;
@@ -625,6 +628,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .font-extrabold {
   font-weight: 800;
 }
+.text-gray-900 {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+}
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -633,17 +640,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
-.text-indigo-600 {
-  --tw-text-opacity: 1;
-  color: rgb(79 70 229 / var(--tw-text-opacity));
-}
-.text-gray-900 {
-  --tw-text-opacity: 1;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
-}
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+.text-indigo-600 {
+  --tw-text-opacity: 1;
+  color: rgb(79 70 229 / var(--tw-text-opacity));
 }
 .text-white {
   --tw-text-opacity: 1;
@@ -732,4 +735,3 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-right: 15rem;
   }
 }
-

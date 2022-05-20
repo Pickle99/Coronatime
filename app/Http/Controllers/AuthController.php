@@ -2,19 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreLoginRequest;
+use App\Http\Requests\StoreAuthRequest;
 use Illuminate\Validation\ValidationException;
 
-class LoginController extends Controller
+class AuthController extends Controller
 {
 	public function create()
 	{
 		return view('components.login');
-	}
-
-	public function edit()
-	{
-		return view('components.reset-password');
 	}
 
 	public function check()
@@ -28,7 +23,7 @@ class LoginController extends Controller
 		return redirect('/login');
 	}
 
-	public function store(StoreLoginRequest $request)
+	public function store(StoreAuthRequest $request)
 	{
 		$field = filter_var($request->user, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
 

@@ -43,7 +43,7 @@
                                </div>
 
                                <div class="text-sm">
-                                   <a href="/reset-password" class="font-medium text-indigo-600 hover:text-indigo-500">{{__('translate.forgot your password?')}}</a>
+                                   <a href="/forgot-password" class="font-medium text-indigo-600 hover:text-indigo-500">{{__('translate.forgot your password?')}}</a>
                                </div>
                            </div>
 
