@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ResetController;
+use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('language/{locale}', [LanguageController::class, 'update'])->name('language');
+//sessions
+Route::get('language/{locale}', [SessionsController::class, 'setLocale'])->name('language');
 
 Route::get('login', [AuthController::class, 'create'])->name('login.create')->middleware('guest');
 Route::post('sessions', [AuthController::class, 'store'])->name('login.store')->middleware('guest');

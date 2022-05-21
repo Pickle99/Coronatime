@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-class LanguageController extends Controller
+class SessionsController extends Controller
 {
-	public function update($locale)
+	public function setLocale($locale)
 	{
 		session()->put('locale', $locale);
 

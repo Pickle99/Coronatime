@@ -17,16 +17,24 @@
 </header>
     <div class="ml-20 mt-10">
         <h1 class="font-extrabold text-black text-3xl">Worldwide Statistics</h1>
-        <div class="flex mt-10 h-10 border-b-2">
-            <a href="#" class="mr-10 font-extralight text-gray-700">Worldwide</a>
-            <a href="#" class="font-extralight text-gray-700">By country</a>
-        </div>
+       @if(is_null($page))
+            <div class="flex mt-10 h-10 border-b-2">
+                <a href="/dashboard?page=worldwide" class="text-xl mr-20" >Worldwide</a>
+                <a href="/dashboard?page=country"  class="text-xl"  >By country</a>
+            </div>
+        @elseif($page === 'worldwide')
+            <div class="flex mt-10 h-10 border-b-2">
+                <a href="/dashboard?page=worldwide" class="font-bold text-xl mr-20" >Worldwide</a>
+                <a href="/dashboard?page=country"  class="text-xl"  >By country</a>
+            </div>
+        @elseif($page === 'country')
+            <div class="flex mt-10 h-10 border-b-2">
+                <a href="/dashboard?page=worldwide" class="text-xl mr-20" >Worldwide</a>
+                <a href="/dashboard?page=country"  class="font-bold  text-xl"  >By country</a>
+            </div>
+        @endif
+
+
     </div>
 
-
-
-{{--    <form method="POST" action="/logout">--}}
-{{--        @csrf--}}
-{{--        <button  type="submit"> Logout</button>--}}
-{{--    </form>--}}
 </x-layout>
