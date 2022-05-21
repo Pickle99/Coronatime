@@ -9,15 +9,15 @@ class AuthController extends Controller
 {
 	public function create()
 	{
-		return view('components.login');
+		return view('components.user.login');
 	}
 
-	public function check()
+	public function landing()
 	{
-		return view('components.checker');
+		return view('components.dashboard');
 	}
 
-	public function see()
+	public function logout()
 	{
 		auth()->logout();
 		return redirect('/login');

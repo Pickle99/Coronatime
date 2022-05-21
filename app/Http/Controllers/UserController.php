@@ -12,7 +12,7 @@ class UserController extends Controller
 {
 	public function create()
 	{
-		return view('components.register');
+		return view('components.user.register');
 	}
 
 	public function store(StoreUserRequest $request)
@@ -31,7 +31,7 @@ class UserController extends Controller
 
 	public function verifyEmail(Request $request)
 	{
-		return view('components.email-verify');
+		return view('components.user.email-verify');
 	}
 
 	public function verified(EmailVerificationRequest $request)

@@ -13,7 +13,7 @@ class ResetController extends Controller
 {
 	public function forgot()
 	{
-		return view('components.forgot-password');
+		return view('components.user.forgot-password');
 	}
 
 	public function reset(StoreForgotRequest $request)
@@ -29,12 +29,12 @@ class ResetController extends Controller
 
 	public function sent()
 	{
-		return view('components.email-verify');
+		return view('components.user.email-verify');
 	}
 
 	public function edit($token, $user)
 	{
-		return view('components.reset-password', [
+		return view('components.user.reset-password', [
 			'token'   => $token,
 			'user'    => $user, ]);
 	}

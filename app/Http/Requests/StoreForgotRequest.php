@@ -24,7 +24,7 @@ class StoreForgotRequest extends FormRequest
 	public function rules()
 	{
 		return [
-			'email'    => 'required|email',
+			'email'    => 'required|email|exists:users,email',
 		];
 	}
 
@@ -33,6 +33,7 @@ class StoreForgotRequest extends FormRequest
 		return [
 			'email.required'       => 'Email is required',
 			'email.email'          => 'Incorrect email format',
+			'email.exists'         => "User with this email doesn't exists",
 		];
 	}
 }

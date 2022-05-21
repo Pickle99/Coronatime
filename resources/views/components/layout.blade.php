@@ -12,6 +12,4 @@
     <div class="p-10"><a href="/language/ka">@lang('translate.ka')</a></div>
 </div>
         {{ $slot }}
-
-
 </body>

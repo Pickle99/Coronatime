@@ -18,7 +18,7 @@ return [
 	'log out'                                                                                        => 'Log out',
 	'sign in'                                                                                        => 'Sign in',
 	'sign up'                                                                                        => 'Sign up',
-	'Welcome back to Coronatime'                                                                     => 'Welcome back to Coronatime',
+	'Welcome back to Coronatime'                                                                     => 'Welcome to Coronatime',
 	'Please enter required info to sing up'                                                          => 'Please enter required info to sing up',
 	'Enter unique username'                                                                          => 'Enter unique username',
 	'Enter unique username or email'                                                                 => 'Enter unique username or email',
@@ -42,4 +42,5 @@ return [
 	'Passwords dont match'                                                                           => 'Passwords dont match',
 	'Incorrect email format'                                                                         => 'Incorrect email format',
 	'New password is required'                                                                       => 'New password is required',
+	"User with this email doesn't exists"                                                            => "User with this email doesn't exists",
 ];

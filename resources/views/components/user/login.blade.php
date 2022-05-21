@@ -1,7 +1,7 @@
 <x-layout>
 
-   <x-panel-login>
-       <x-panel-login-flex>
+   <x-panels.panel-login>
+       <x-panels.login-flex>
            <div class="mx-auto w-full max-w-sm lg:w-96">
                <div>
                    <img class="h-12 mb-20 w-auto" src="{{asset('storage/images/coronalogo.png')}}" alt="Workflow">
@@ -58,7 +58,7 @@
            </div>
            <div>
            </div>
-       </x-panel-login-flex>
+       </x-panels.login-flex>
        <x-vaccine-img></x-vaccine-img>
-   </x-panel-login>
+   </x-panels.panel-login>
 </x-layout>

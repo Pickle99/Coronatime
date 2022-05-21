@@ -42,4 +42,5 @@ return [
 	'Passwords dont match'                                                                           => 'პაროლები არ ემთხვევა',
 	'Incorrect email format'                                                                         => 'არასწორი ელ-ფოსტის ფორმატი',
 	'New password is required'                                                                       => 'ახალი პაროლის შეყვანა სავალდებულოა',
+	"User with this email doesn't exists"                                                            => 'მომხმარებელი აღნიშნული ელ-ფოსტით არ არსებობს',
 ];

@@ -20,19 +20,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('language/{locale}', [LanguageController::class, 'update'])->name('language');
 
 Route::get('login', [AuthController::class, 'create'])->name('login.create')->middleware('guest');
-Route::post('sessions', [AuthController::class, 'store'])->name('login.store');
+Route::post('sessions', [AuthController::class, 'store'])->name('login.store')->middleware('guest');
+Route::get('dashboard', [AuthController::class, 'landing'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::post('logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
+
+Route::get('register', [UserController::class, 'create'])->name('register.create')->middleware('guest');
+Route::post('register', [UserController::class, 'store'])->name('register.store')->middleware('guest');
+Route::get('email/verify', [UserController::class, 'verifyEmail'])->name('verification.notice')->middleware('auth');
+Route::get('email/verify/{id}/{hash}', [UserController::class, 'verified'])->name('verification.verify')->middleware(['auth', 'signed']);
+
 Route::get('forgot-password', [ResetController::class, 'forgot'])->name('password.request')->middleware('guest');
 Route::post('forgot-password', [ResetController::class, 'reset'])->name('password.email')->middleware('guest');
-Route::get('verify-sent', [ResetController::class, 'sent'])->middleware('guest')->name('password.sent');
-
-Route::get('register', [UserController::class, 'create'])->name('register.create')->middleware(['guest']);
-Route::post('register', [UserController::class, 'store'])->name('register.store');
-Route::get('email/verify', [UserController::class, 'verifyEmail'])->middleware('auth')->name('verification.notice');
-Route::get('email/verify/{id}/{hash}', [UserController::class, 'verified'])->middleware(['auth', 'signed'])->name('verification.verify');
-
-//test
-Route::get('dashboard', [AuthController::class, 'check'])->middleware(['auth', 'verified']);
-Route::post('logout', [AuthController::class, 'see'])->middleware('auth');
-
-Route::get('/reset-password/{token}={email}', [ResetController::class, 'edit'])->middleware('guest')->name('password.reset');
-Route::post('/reset-password', [ResetController::class, 'update'])->middleware('guest')->name('password.update');
+Route::get('verify-sent', [ResetController::class, 'sent'])->name('password.sent')->middleware('guest');
+Route::get('/reset-password/{token}={email}', [ResetController::class, 'edit'])->name('password.reset')->middleware('guest');
+Route::post('/reset-password', [ResetController::class, 'update'])->name('password.update')->middleware('guest');
