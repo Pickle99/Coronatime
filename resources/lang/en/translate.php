@@ -40,4 +40,6 @@ return [
 	'new password'                                                                                   => 'New password',
 	'enter new password'                                                                             => 'Enter new password',
 	'Passwords dont match'                                                                           => 'Passwords dont match',
+	'Incorrect email format'                                                                         => 'Incorrect email format',
+	'New password is required'                                                                       => 'New password is required',
 ];

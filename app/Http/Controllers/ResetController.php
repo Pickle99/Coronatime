@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreForgotRequest;
 use App\Http\Requests\StoreResetRequest;
 use Illuminate\Auth\Events\PasswordReset;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
@@ -16,10 +16,8 @@ class ResetController extends Controller
 		return view('components.forgot-password');
 	}
 
-	public function reset(StoreResetRequest $request)
+	public function reset(StoreForgotRequest $request)
 	{
-		$validated = $request->validated();
-
 		$status = Password::sendResetLink(
 			$request->only('email')
 		);
@@ -41,14 +39,8 @@ class ResetController extends Controller
 			'user'    => $user, ]);
 	}
 
-	public function update(Request $request)
+	public function update(StoreResetRequest $request)
 	{
-		$request->validate([
-			'token'    => 'required',
-			'email'    => 'required|email',
-			'password' => 'required|min:3|confirmed',
-		]);
-
 		$status = Password::reset(
 			$request->only('password', 'password_confirmation', 'token', 'email'),
 			function ($user, $password) {

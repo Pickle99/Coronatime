@@ -40,4 +40,6 @@ return [
 	'new password'                                                                                   => 'ახალი პაროლი',
 	'enter new password'                                                                             => 'შეიყვანეთ ახალი პაროლი',
 	'Passwords dont match'                                                                           => 'პაროლები არ ემთხვევა',
+	'Incorrect email format'                                                                         => 'არასწორი ელ-ფოსტის ფორმატი',
+	'New password is required'                                                                       => 'ახალი პაროლის შეყვანა სავალდებულოა',
 ];
