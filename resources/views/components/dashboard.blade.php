@@ -17,24 +17,10 @@
 </header>
     <div class="ml-20 mt-10">
         <h1 class="font-extrabold text-black text-3xl">Worldwide Statistics</h1>
-       @if(is_null($page))
-            <div class="flex mt-10 h-10 border-b-2">
-                <a href="/dashboard?page=worldwide" class="text-xl mr-20" >Worldwide</a>
-                <a href="/dashboard?page=country"  class="text-xl"  >By country</a>
+        <div class="flex mt-10 h-10 border-b-2">
+                <a href="/dashboard?page=worldwide" class="{{$page === 'worldwide' ? 'font-bold border-b-2 border-black text-xl mr-20' : 'text-xl mr-20'}}" >Worldwide</a>
+                <a href="/dashboard?page=country"  class="{{$page === 'country' ? 'font-bold border-b-2 border-black text-xl mr-20' : 'text-xl mr-20'}}"  >By country</a>
             </div>
-        @elseif($page === 'worldwide')
-            <div class="flex mt-10 h-10 border-b-2">
-                <a href="/dashboard?page=worldwide" class="font-bold text-xl mr-20" >Worldwide</a>
-                <a href="/dashboard?page=country"  class="text-xl"  >By country</a>
-            </div>
-        @elseif($page === 'country')
-            <div class="flex mt-10 h-10 border-b-2">
-                <a href="/dashboard?page=worldwide" class="text-xl mr-20" >Worldwide</a>
-                <a href="/dashboard?page=country"  class="font-bold  text-xl"  >By country</a>
-            </div>
-        @endif
-
-
     </div>
 
 </x-layout>
