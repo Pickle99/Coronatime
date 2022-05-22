@@ -471,6 +471,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: auto;
   margin-right: auto;
 }
+.mx-8 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.mx-6 {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
 .mt-8 {
   margin-top: 2rem;
 }
@@ -527,6 +535,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mb-4 {
   margin-bottom: 1rem;
+}
+.mb-10 {
+  margin-bottom: 2.5rem;
 }
 .block {
   display: block;
@@ -942,6 +953,14 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-right: -1.5rem;
   }
 
+  .sm\:flex {
+    display: flex;
+  }
+
+  .sm\:w-20 {
+    width: 5rem;
+  }
+
   .sm\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -954,6 +973,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   .sm\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+
+  .sm\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 }
 @media (min-width: 768px) {
@@ -974,16 +998,48 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-right: -2rem;
   }
 
+  .lg\:mb-20 {
+    margin-bottom: 5rem;
+  }
+
+  .lg\:mr-40 {
+    margin-right: 10rem;
+  }
+
   .lg\:block {
     display: block;
+  }
+
+  .lg\:flex {
+    display: flex;
+  }
+
+  .lg\:h-12 {
+    height: 3rem;
   }
 
   .lg\:w-96 {
     width: 24rem;
   }
 
+  .lg\:max-w-sm {
+    max-width: 24rem;
+  }
+
   .lg\:flex-none {
     flex: none;
+  }
+
+  .lg\:flex-1 {
+    flex: 1 1 0%;
+  }
+
+  .lg\:flex-col {
+    flex-direction: column;
+  }
+
+  .lg\:justify-start {
+    justify-content: flex-start;
   }
 
   .lg\:px-8 {
@@ -995,12 +1051,78 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-left: 15rem;
     padding-right: 15rem;
   }
+
+  .lg\:py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .lg\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .lg\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
 }
 @media (min-width: 1280px) {
 
   .xl\:px-60 {
     padding-left: 15rem;
     padding-right: 15rem;
+  }
+}
+@media (min-width: 200px) {
+
+  .mob\:mx-4 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .mob\:mx-8 {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .mob\:mx-10 {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+  }
+
+  .mob\:mx-6 {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
+  .mob\:ml-10 {
+    margin-left: 2.5rem;
+  }
+
+  .mob\:mt-20 {
+    margin-top: 5rem;
+  }
+
+  .mob\:mt-12 {
+    margin-top: 3rem;
+  }
+
+  .mob\:mt-16 {
+    margin-top: 4rem;
+  }
+
+  .mob\:flex {
+    display: flex;
+  }
+
+  .mob\:justify-center {
+    justify-content: center;
+  }
+
+  .mob\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 }
 

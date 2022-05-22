@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+        screens:{
+          'mob': '200px',
+        },
         opacity: {
           '0.08': '0.08',
         },

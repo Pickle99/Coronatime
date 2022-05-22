@@ -2,10 +2,10 @@
 
    <x-panels.panel-login>
        <x-panels.login-flex>
-           <div class="mx-auto w-full max-w-sm lg:w-96">
+           <div class="mx-auto w-full lg:max-w-sm lg:w-96">
                <div>
-                   <img class="h-12 mb-20 w-auto" src="{{asset('storage/images/coronalogo.png')}}" alt="Workflow">
-                   <h2 class="mb-4 text-4xl font-bold text-black">{{__('translate.Welcome back')}}</h2>
+                   <img class="mob:mt-16 mb-10 h-12 lg:mb-20 w-auto" src="{{asset('storage/images/coronalogo.png')}}" alt="Workflow">
+                   <h2 class="mob:text-3xl mb-4 lg:text-4xl font-bold text-black">{{__('translate.Welcome back')}}</h2>
                    <p class="mt-2 text-lg text-gray-400">
                        {{__('translate.Welcome back! Please enter your details')}}
                    </p>
