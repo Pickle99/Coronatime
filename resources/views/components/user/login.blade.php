@@ -2,10 +2,10 @@
 
    <x-panels.panel-login>
        <x-panels.login-flex>
-           <div class="mx-auto w-full lg:max-w-sm lg:w-96">
+           <div class="lg:mx-auto lg:w-full lg:max-w-sm lg:w-96 lg:ml-20">
                <div>
-                   <img class="mob:mt-16 mb-10 h-12 lg:mb-20 w-auto" src="{{asset('storage/images/coronalogo.png')}}" alt="Workflow">
-                   <h2 class="mob:text-3xl mb-4 lg:text-4xl font-bold text-black">{{__('translate.Welcome back')}}</h2>
+                   <img class="mob:mt-16 mob:mb-10 lg:h-12  w-auto" src="{{asset('storage/images/coronalogo.png')}}" alt="Workflow">
+                   <h2 class="mob:text-3xl lg:mb-4 lg:text-4xl font-bold text-black">{{__('translate.Welcome back')}}</h2>
                    <p class="mt-2 text-lg text-gray-400">
                        {{__('translate.Welcome back! Please enter your details')}}
                    </p>
@@ -16,7 +16,7 @@
                        <form method="POST"  action="/sessions" class="space-y-6">
                            @csrf
                            <div>
-                               <label for="username" class="block text-sm font-bold text-black">{{__('translate.username', ['name' => 'Username'])}}</label>
+                               <label for="username" class="block text-lg lg:text-sm font-bold text-black">{{__('translate.username', ['name' => 'Username'])}}</label>
                                <div class="mt-1">
                                    <input id="username" value="{{old('user')}}" placeholder="{{__('translate.Enter unique username or email')}}" name="user" type="text" class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                </div>
@@ -27,7 +27,7 @@
 
 
                            <div>
-                               <label for="password" class="block text-sm font-bold text-black">{{__('translate.password')}}</label>
+                               <label for="password" class="block text-lg lg:text-sm font-bold text-black">{{__('translate.password')}}</label>
                                <div class="mt-1">
                                    <input id="password" value="{{old('password')}}" placeholder="{{__('translate.Fill in password')}}" name="password" type="password" class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                </div>

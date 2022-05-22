@@ -1,9 +1,9 @@
 <x-layout>
 <x-panels.panel-login>
     <x-panels.login-flex>
-        <div class="mx-auto w-full max-w-sm lg:w-96">
+        <div class="lg:mx-auto lg:w-full lg:max-w-sm lg:w-96 lg:ml-20">
             <div>
-                <img class="h-12 mb-20 w-auto" src="{{asset('storage/images/coronalogo.png')}}" alt="Workflow">
+                <img class="mob:mt-16 mb-10 h-12 xl:mb-20  w-auto" src="{{asset('storage/images/coronalogo.png')}}" alt="Workflow">
                 <h2 class="mb-4 text-3xl font-bold text-black" >{{__('translate.Welcome back to Coronatime')}}</h2>
                 <p class="mt-2 text-lg text-gray-400">
                   {{__('translate.Please enter required info to sing up')}}
@@ -16,7 +16,7 @@
                         @csrf
 
                             <div>
-                                <label for="username" class="block text-sm font-bold text-black">{{__('translate.username', ['name' => 'Username'])}}</label>
+                                <label for="username" class="block text-lg lg:text-sm font-bold text-black">{{__('translate.username', ['name' => 'Username'])}}</label>
                                 <div class="mt-1">
                                     <input id="username" value="{{old('username')}}" placeholder="{{__('translate.Enter unique username')}}" name="username" type="text" class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                 </div>
@@ -27,7 +27,7 @@
 
 
                         <div>
-                            <label for="email" class="block text-sm font-bold text-black">{{__('translate.email')}}</label>
+                            <label for="email" class="block text-lg lg:text-sm font-bold text-black">{{__('translate.email')}}</label>
                             <div class="mt-1">
                                 <input id="email" value="{{old('email')}}" placeholder="{{__('translate.Enter your email')}}" name="email" type="email" class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             </div>
@@ -37,7 +37,7 @@
                         </div>
 
                         <div class="space-y-1">
-                            <label for="password" class="block text-sm font-bold text-black"> {{__('translate.password')}}</label>
+                            <label for="password" class="block text-lg lg:text-sm font-bold text-black"> {{__('translate.password')}}</label>
                             <div class="mt-1">
                                 <input id="password"  placeholder="{{__('translate.Fill in password')}}" name="password" type="password"  class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             </div>
@@ -47,7 +47,7 @@
                         </div>
 
                         <div class="space-y-1">
-                            <label for="repeat" class="block text-sm font-bold text-black"> {{__('translate.repeat password')}}</label>
+                            <label for="repeat" class="block text-lg lg:text-sm font-bold text-black"> {{__('translate.repeat password')}}</label>
                             <div class="mt-1">
                                 <input id="repeat"  placeholder="{{__('translate.repeat password')}}" name="repeat" type="password"  class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             </div>
