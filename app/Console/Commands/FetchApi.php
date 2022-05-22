@@ -30,18 +30,18 @@ class FetchApi extends Command
 	 */
 	public function handle()
 	{
+		$this->info('please wait');
 		$get = Http::get('https://devtest.ge/countries');
 		$countries = json_decode($get, true);
-
 		foreach ($countries as $country)
 		{
 			$api = new Country();
 			$api['code'] = $country['code'];
-			$api['name'] = json_encode(['en' => $country['name']['en'], 'ka' => $country['name']['ka']]);
+			$api['name'] = json_encode(['en'=>$country['name']['en'], 'ka'=>$country['name']['ka']]);
 			$api->save();
 
 			$post = Http::post('https://devtest.ge/get-country-statistics', [
-				'code' => $country['code'],
+				'code'    => $country['code'],
 			]);
 			$data = json_decode($post);
 			$info = new Info();

@@ -7,22 +7,22 @@
                         <table class="min-w-full divide-y divide-gray-300">
                             <thead class="bg-gray-50">
                             <tr>
-                                <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Location</th>
-                                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">New cases</th>
-                                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Deaths</th>
-                                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Recovered</th>
+                                <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">{{__('translate.location')}}</th>
+                                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">{{__('translate.newcases')}}</th>
+                                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">{{__('translate.deaths')}}</th>
+                                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">{{__('translate.recovered')}}</th>
                             </tr>
                             </thead>
                             <tbody class="divide-y divide-gray-200 bg-white">
                             <tr>
-                                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Worldwide</td>
+                                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{__('translate.worldwide')}}</td>
                                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{$confirmed}}</td>
                                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{$deaths}}</td>
                                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{$recovered}}</td>
                             </tr>
                             @foreach($countries as $country)
                                 <tr>
-                                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{$country->name}}</td>
+                                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{$country->getTranslation('name',app()->getLocale())}}</td>
                                     <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{$country->infos->confirmed}}</td>
                                     <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{$country->infos->deaths}}</td>
                                     <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{$country->infos->recovered}}</td>
