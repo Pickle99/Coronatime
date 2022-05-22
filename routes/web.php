@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\CountryController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\UserController;
@@ -37,4 +36,3 @@ Route::get('/reset-password/{token}={email}', [ResetController::class, 'edit'])-
 Route::post('/reset-password', [ResetController::class, 'update'])->name('password.update')->middleware('guest');
 
 //test
-Route::get('/fetch', [CountryController::class, 'fetch']);
