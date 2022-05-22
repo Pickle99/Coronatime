@@ -23,7 +23,7 @@
             </div>
     </div>
     <div>
-    <x-logic :page="$page"></x-logic>
+    <x-logic :page="$page" :countries="$countries" :infos="$infos" :confirmed="$confirmed" :recovered="$recovered" :deaths="$deaths"></x-logic>
     </div>
 
 </x-layout>

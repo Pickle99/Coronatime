@@ -1,11 +1,11 @@
-@props(['page'])
+@props(['page', 'countries', 'infos', 'confirmed', 'recovered', 'deaths'])
 
 @if(is_null($page))
-    <x-worldwide></x-worldwide>
+    <x-worldwide :confirmed="$confirmed" :recovered="$recovered" :deaths="$deaths"></x-worldwide>
 @elseif($page === 'worldwide')
-    <x-worldwide></x-worldwide>
+    <x-worldwide :confirmed="$confirmed" :recovered="$recovered" :deaths="$deaths"></x-worldwide>
 @elseif($page==='country')
-    <x-by-country></x-by-country>
+    <x-by-country :countries="$countries" :infos="$infos" :confirmed="$confirmed" :recovered="$recovered" :deaths="$deaths"></x-by-country>
 @else
     <x-worldwide></x-worldwide>
 @endif

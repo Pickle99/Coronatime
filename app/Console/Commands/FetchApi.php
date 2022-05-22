@@ -47,6 +47,7 @@ class FetchApi extends Command
 			$info = new Info();
 			$info->country = $data->country;
 			$info->code = $data->code;
+			$info->country_id = $data->id;
 			$info->confirmed = $data->confirmed;
 			$info->recovered = $data->recovered;
 			$info->critical = $data->critical;

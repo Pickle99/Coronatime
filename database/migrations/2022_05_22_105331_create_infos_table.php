@@ -16,6 +16,7 @@ return new class extends Migration {
 			$table->bigIncrements('id');
 			$table->string('country');
 			$table->string('code');
+			$table->foreignId('country_id')->constrained()->cascadeOnDelete();
 			$table->bigInteger('confirmed');
 			$table->bigInteger('recovered');
 			$table->bigInteger('critical');

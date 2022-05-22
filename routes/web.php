@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SessionsController;
+use App\Http\Controllers\StatisticsController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,7 +22,7 @@ Route::get('language/{locale}', [SessionsController::class, 'setLocale'])->name(
 
 Route::get('login', [AuthController::class, 'create'])->name('login.create')->middleware('guest');
 Route::post('sessions', [AuthController::class, 'store'])->name('login.store')->middleware('guest');
-Route::get('dashboard', [AuthController::class, 'landing'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('dashboard', [StatisticsController::class, 'landing'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::post('logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
 
 Route::get('register', [UserController::class, 'create'])->name('register.create')->middleware('guest');

@@ -12,14 +12,6 @@ class AuthController extends Controller
 		return view('components.user.login');
 	}
 
-	public function landing()
-	{
-		$page = request('page');
-		return view('components.dashboard', [
-			'page' => $page,
-		]);
-	}
-
 	public function logout()
 	{
 		auth()->logout();

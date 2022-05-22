@@ -1,3 +1,4 @@
+{{--@props(['countries', 'infos'])  no need and why??--}}
 <div class="mx-44 px-4 sm:px-6 lg:px-8">
         <div class="mt-8 flex flex-col">
             <div class="-my-2 -mx-4 overflow-y-auto sm:-mx-6 lg:-mx-8">
@@ -14,13 +15,19 @@
                             </thead>
                             <tbody class="divide-y divide-gray-200 bg-white">
                             <tr>
-                                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Japan</td>
-                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">54215</td>
-                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">431</td>
-                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">9872</td>
+                                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Worldwide</td>
+                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{$confirmed}}</td>
+                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{$deaths}}</td>
+                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{$recovered}}</td>
                             </tr>
-
-                            <!-- More .. -->
+                            @foreach($countries as $country)
+                                <tr>
+                                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{$country->name}}</td>
+                                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{$country->infos->confirmed}}</td>
+                                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{$country->infos->deaths}}</td>
+                                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{$country->infos->recovered}}</td>
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
