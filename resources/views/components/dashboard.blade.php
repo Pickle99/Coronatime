@@ -20,8 +20,8 @@
     <div class="mx-52 mt-10">
         <h1 class="font-extrabold text-black text-3xl">{{__('translate.worldwidestats')}}</h1>
         <div class="flex mt-10 h-10 border-b-2">
-                <a href="/dashboard?page=worldwide" class="{{$page === 'worldwide' || is_null($page) ? 'font-bold border-b-4 border-black text-xl mr-20' : 'text-xl mr-20'}}" >{{__('translate.worldwide')}}</a>
-                <a href="/dashboard?page=country"  class="{{$page === 'country' ? 'font-bold border-b-4 border-black text-xl mr-20' : 'text-xl mr-20'}}" >{{__('translate.bycountry')}}</a>
+                <a href="/dashboard?page=worldwide&{{http_build_query(request()->except('page'))}}" class="{{$page === 'worldwide' || is_null($page) ? 'font-bold border-b-4 border-black text-xl mr-20' : 'text-xl mr-20'}}" >{{__('translate.worldwide')}}</a>
+                <a href="/dashboard?page=country&{{http_build_query(request()->except('page'))}}"  class="{{$page === 'country' ? 'font-bold border-b-4 border-black text-xl mr-20' : 'text-xl mr-20'}}" >{{__('translate.bycountry')}}</a>
             </div>
     </div>
     <div>

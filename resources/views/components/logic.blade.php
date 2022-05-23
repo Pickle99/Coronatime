@@ -1,4 +1,4 @@
-@props(['page', 'countries', 'infos', 'confirmed', 'recovered', 'deaths'])
+
 
 @if(is_null($page))
     <x-worldwide :confirmed="$confirmed" :recovered="$recovered" :deaths="$deaths"></x-worldwide>

@@ -7,9 +7,8 @@ use App\Models\Info;
 
 class StatisticsController extends Controller
 {
-	public function landing()
+	public function index()
 	{
-		$countries = Country::all();
 		$infos = Info::all();
 		$page = request('page');
 		$confirmed = Info::sum('confirmed');
@@ -17,12 +16,12 @@ class StatisticsController extends Controller
 		$deaths = Info::sum('deaths');
 
 		return view('components.dashboard', [
-			'page'      => $page,
-			'countries' => $countries,
-			'infos'     => $infos,
-			'confirmed' => $confirmed,
-			'recovered' => $recovered,
-			'deaths'    => $deaths,
+			'page'          => $page,
+			'countries'     => Country::latest()->filter(request(['search']))->get(),
+			'infos'         => $infos,
+			'confirmed'     => $confirmed,
+			'recovered'     => $recovered,
+			'deaths'        => $deaths,
 		]);
 	}
 }
