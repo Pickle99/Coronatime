@@ -47,6 +47,7 @@ return [
 	'worldwidestats'                                                                                 => 'Worldwide Statistics',
 	'worldwide'                                                                                      => 'Worldwide',
 	'bycountry'                                                                                      => 'By country',
+	'search'                                                                                         => 'Search by country',
 	'newcases'                                                                                       => 'New cases',
 	'recovered'                                                                                      => 'Recovered',
 	'death'                                                                                          => 'Death',

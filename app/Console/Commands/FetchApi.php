@@ -37,7 +37,7 @@ class FetchApi extends Command
 		{
 			$api = new Country();
 			$api['code'] = $country['code'];
-			$api['name'] = json_encode(['en'=>$country['name']['en'], 'ka'=>$country['name']['ka']]);
+			$api['name'] = $country['name'];
 			$api->save();
 
 			$post = Http::post('https://devtest.ge/get-country-statistics', [

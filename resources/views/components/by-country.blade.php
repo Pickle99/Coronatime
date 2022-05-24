@@ -6,7 +6,7 @@
             @if(request('page'))
                 <input type="hidden" name="page" value="{{request('page')}}"/>
             @endif
-            <input class="focus:outline-none" placeholder="Search by country" type="text" name="search" value="{{request('search')}}"/>
+            <input class="focus:outline-none" placeholder="{{__('translate.search')}}" type="text" name="search" value="{{request('search')}}"/>
         </form>
     </div>
     <div class="mt-8 flex flex-col">
@@ -17,49 +17,49 @@
                         <thead class="bg-gray-50">
                         <tr>
                             <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">
-                                <a href="#" class="group inline-flex items-center">
+                                <span  class="group inline-flex items-center">
                                     {{__('translate.location')}}
                                     <span class="flex-none rounded">
                                       <div class="ml-2">
-                                        <img class="-mb-2" alt="img" src="{{asset('/storage/images/vector.png')}}"/>
-                                        <img class="rotate-180" alt="img" src="{{asset('/storage/images/vector.png')}}"/>
+                                       <a href="/dashboard?sort="> <img class="-mb-2" alt="img" src="{{asset('/storage/images/vector.png')}}"/></a>
+                                       <a href="/dashboard?sort="> <img class="rotate-180" alt="img" src="{{asset('/storage/images/vector.png')}}"/></a>
                                     </div>
                     </span>
-                                </a>
+                                </span>
                             </th>
                             <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                                <a href="#" class="group inline-flex items-center">
+                                <span class="group inline-flex items-center">
                                     {{__('translate.newcases')}}
                     <span class="flex-none rounded">
                                       <div class="ml-2">
-                                        <img class="-mb-2" alt="img" src="{{asset('/storage/images/vector.png')}}"/>
-                                        <img class="rotate-180" alt="img" src="{{asset('/storage/images/vector.png')}}"/>
+                                        <a href="#"> <img class="-mb-2" alt="img" src="{{asset('/storage/images/vector.png')}}"/></a>
+                                       <a href="#"> <img class="rotate-180" alt="img" src="{{asset('/storage/images/vector.png')}}"/></a>
                                     </div>
                     </span>
-                                </a>
+                                </span>
                             </th>
                             <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                                <a href="#" class="group inline-flex items-center">
+                                <span  class="group inline-flex items-center">
                                     {{__('translate.deaths')}}
                                     <span class="flex-none rounded">
                                       <div class="ml-2">
-                                        <img class="-mb-2"  alt="img" src="{{asset('/storage/images/vector.png')}}"/>
-                                        <img class="rotate-180" alt="img" src="{{asset('/storage/images/vector.png')}}"/>
+                                           <a href="#"> <img class="-mb-2" alt="img" src="{{asset('/storage/images/vector.png')}}"/></a>
+                                       <a href="#"> <img class="rotate-180" alt="img" src="{{asset('/storage/images/vector.png')}}"/></a>
                                     </div>
                     </span>
-                                </a>
+                                </span>
 
                             </th>
                             <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                                <a href="#" class="group inline-flex items-center">
+                                <span class="group inline-flex items-center">
                                     {{__('translate.recovered')}}
                                     <span class="flex-none rounded">
                                       <div class="ml-2">
-                                        <img class="-mb-2"  alt="img" src="{{asset('/storage/images/vector.png')}}"/>
-                                        <img class="rotate-180" alt="img" src="{{asset('/storage/images/vector.png')}}"/>
+                                           <a href="#"> <img class="-mb-2" alt="img" src="{{asset('/storage/images/vector.png')}}"/></a>
+                                       <a href="#"> <img class="rotate-180" alt="img" src="{{asset('/storage/images/vector.png')}}"/></a>
                                     </div>
                     </span>
-                                </a>
+                                </span>
 
                             </th>
                         </tr>
