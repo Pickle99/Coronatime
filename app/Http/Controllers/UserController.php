@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\CreateUserRequest;
 use App\Models\User;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
@@ -15,17 +15,13 @@ class UserController extends Controller
 		return view('components.user.register');
 	}
 
-	public function store(StoreUserRequest $request)
+	public function store(CreateUserRequest $request)
 	{
 		$validated = $request->validated();
 		$validated['password'] = bcrypt($validated['password']);
 		$user = User::create($validated);
 		event(new Registered($user));
 		auth()->login($user);
-
-		// Retrieve a portion of the validated input data...
-//		$validated = $request->safe()->only(['username', 'email']);
-//		$validated = $request->safe()->except(['name', 'email']);
 		return redirect('/dashboard');
 	}
 

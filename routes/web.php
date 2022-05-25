@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\ResetController;
-use App\Http\Controllers\SessionsController;
+use App\Http\Controllers\ResetPasswordController;
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\StatisticsController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -17,23 +17,26 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//sessions
-Route::get('language/{locale}', [SessionsController::class, 'setLocale'])->name('language');
 
-Route::get('login', [AuthController::class, 'create'])->name('login.create')->middleware('guest');
-Route::post('sessions', [AuthController::class, 'store'])->name('login.store')->middleware('guest');
-Route::get('dashboard', [StatisticsController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
-Route::post('logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
+Route::get('language/{locale}', [LanguageController::class, 'setLocale'])->name('language');
 
-Route::get('register', [UserController::class, 'create'])->name('register.create')->middleware('guest');
-Route::post('register', [UserController::class, 'store'])->name('register.store')->middleware('guest');
+Route::prefix('/')->middleware('guest')->group(function () {
+	Route::view('login', 'components.user.login')->name('login.view');
+	Route::post('login', [AuthController::class, 'login'])->name('login');
+
+	Route::get('register', [UserController::class, 'create'])->name('register.create');
+	Route::post('register', [UserController::class, 'store'])->name('register.store');
+
+	Route::get('forgot-password', [ResetPasswordController::class, 'forgot'])->name('password.request');
+	Route::post('forgot-password', [ResetPasswordController::class, 'reset'])->name('password.email');
+	Route::get('verify-sent', [ResetPasswordController::class, 'sent'])->name('password.sent');
+	Route::get('reset-password/{token}={email}', [ResetPasswordController::class, 'edit'])->name('password.reset');
+	Route::post('reset-password', [ResetPasswordController::class, 'update'])->name('password.update');
+});
+
+Route::get('dashboard', [StatisticsController::class, 'index'])->name('dashboard')->middleware(['auth', 'verified']);
+
+Route::post('logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
+
 Route::get('email/verify', [UserController::class, 'verifyEmail'])->name('verification.notice')->middleware('auth');
 Route::get('email/verify/{id}/{hash}', [UserController::class, 'verified'])->name('verification.verify')->middleware(['auth', 'signed']);
-
-Route::get('forgot-password', [ResetController::class, 'forgot'])->name('password.request')->middleware('guest');
-Route::post('forgot-password', [ResetController::class, 'reset'])->name('password.email')->middleware('guest');
-Route::get('verify-sent', [ResetController::class, 'sent'])->name('password.sent')->middleware('guest');
-Route::get('/reset-password/{token}={email}', [ResetController::class, 'edit'])->name('password.reset')->middleware('guest');
-Route::post('/reset-password', [ResetController::class, 'update'])->name('password.update')->middleware('guest');
-
-//test

@@ -13,7 +13,7 @@
 
                <div class="mt-8">
                    <div class="mt-6">
-                       <form method="POST"  action="/sessions" class="space-y-6">
+                       <form method="POST"  action="/login" class="space-y-6">
                            @csrf
                            <div>
                                <label for="username" class="block text-lg lg:text-sm font-bold text-black">{{__('translate.username')}}</label>

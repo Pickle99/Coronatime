@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-class SessionsController extends Controller
+class LanguageController extends Controller
 {
 	public function setLocale($locale)
 	{
