@@ -32,9 +32,9 @@ class StoreAuthRequest extends FormRequest
 	public function messages()
 	{
 		return [
-			'user.required'        => 'Username is required',
-			'user.min'             => 'Username must contain at least :min symbols',
-			'password.required'    => 'Password is required',
+			'user.required'        => 'username_is_required',
+			'user.min'             => 'username_must_contain_at_least_3_symbols',
+			'password.required'    => 'password_is_required',
 		];
 	}
 }

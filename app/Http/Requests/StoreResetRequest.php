@@ -33,11 +33,11 @@ class StoreResetRequest extends FormRequest
 	public function messages()
 	{
 		return [
-			'email.required'       => 'Email is required',
-			'password.required'    => 'New password is required',
-			'password.min'         => 'New password must contain at least :min symbols',
-			'password.confirmed'   => 'Passwords dont match',
-			'email.email'          => 'Incorrect email format',
+			'email.required'       => 'email_is_required',
+			'password.required'    => 'new_password_is_required',
+			'password.min'         => 'new password_must_contain_at_least_3_symbols',
+			'password.confirmed'   => 'passwords_dont_match',
+			'email.email'          => 'incorrect_email_format',
 		];
 	}
 }

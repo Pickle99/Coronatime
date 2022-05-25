@@ -30,7 +30,7 @@
                             </th>
                             <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
                                 <span class="group inline-flex items-center">
-                                    {{__('translate.newcases')}}
+                                    {{__('translate.new_cases')}}
                     <span class="flex-none rounded">
 
                                       <div class="ml-2">
@@ -76,7 +76,7 @@
                         </tr>
                         @foreach($countries as $country)
                             <tr>
-                                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{$country->getTranslation('name',app()->getLocale())}}</td>
+                                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{$country->name}}</td>
                                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{$country->infos->confirmed}}</td>
                                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{$country->infos->deaths}}</td>
                                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{$country->infos->recovered}}</td>

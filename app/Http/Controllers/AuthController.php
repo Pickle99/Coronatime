@@ -28,7 +28,7 @@ class AuthController extends Controller
 		]))
 		{
 			throw ValidationException::withMessages([
-				'user' => 'Your provided credentials could not be verified.',
+				'user' => 'your_provided_credentials_could_not_be_verified',
 			]);
 		}
 

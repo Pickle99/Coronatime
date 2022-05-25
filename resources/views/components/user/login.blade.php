@@ -5,9 +5,9 @@
            <div class="lg:mx-auto lg:w-full lg:max-w-sm lg:w-96 lg:ml-20">
                <div>
                    <img class="mob:mt-16 mob:mb-10 lg:h-12  w-auto" src="{{asset('storage/images/coronalogo.png')}}" alt="Workflow">
-                   <h2 class="mob:text-3xl lg:mb-4 lg:text-4xl font-bold text-black">{{__('translate.Welcome back')}}</h2>
+                   <h2 class="mob:text-3xl lg:mb-4 lg:text-4xl font-bold text-black">{{__('translate.welcome_back')}}</h2>
                    <p class="mt-2 text-lg text-gray-400">
-                       {{__('translate.Welcome back! Please enter your details')}}
+                       {{__('translate.welcome_back_please_enter_your_details')}}
                    </p>
                </div>
 
@@ -16,9 +16,9 @@
                        <form method="POST"  action="/sessions" class="space-y-6">
                            @csrf
                            <div>
-                               <label for="username" class="block text-lg lg:text-sm font-bold text-black">{{__('translate.username', ['name' => 'Username'])}}</label>
+                               <label for="username" class="block text-lg lg:text-sm font-bold text-black">{{__('translate.username')}}</label>
                                <div class="mt-1">
-                                   <input id="username" value="{{old('user')}}" placeholder="{{__('translate.Enter unique username or email')}}" name="user" type="text" class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                   <input id="username" value="{{old('user')}}" placeholder="{{__('translate.enter_unique_username_or_email')}}" name="user" type="text" class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                </div>
                                @error("user")
                                <p class="text-red-500 text-lg mt-1">{{__("translate.$message")}}</p>
@@ -29,7 +29,7 @@
                            <div>
                                <label for="password" class="block text-lg lg:text-sm font-bold text-black">{{__('translate.password')}}</label>
                                <div class="mt-1">
-                                   <input id="password" value="{{old('password')}}" placeholder="{{__('translate.Fill in password')}}" name="password" type="password" class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                   <input id="password" value="{{old('password')}}" placeholder="{{__('translate.fill_in_password')}}" name="password" type="password" class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                </div>
                                @error('password')
                                <p class="text-red-500 text-lg mt-1">{{__("translate.$message")}}</p>
@@ -39,19 +39,19 @@
                            <div class="flex items-center justify-between">
                                <div class="flex items-center">
                                    <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
-                                   <label for="remember-me" class="ml-2 block text-sm text-gray-900">{{__('translate.remember me')}} </label>
+                                   <label for="remember-me" class="ml-2 block text-sm text-gray-900">{{__('translate.remember_me')}} </label>
                                </div>
 
                                <div class="text-sm">
-                                   <a href="/forgot-password" class="font-medium text-indigo-600 hover:text-indigo-500">{{__('translate.forgot your password?')}}</a>
+                                   <a href="/forgot-password" class="font-medium text-indigo-600 hover:text-indigo-500">{{__('translate.forgot_your_password')}}</a>
                                </div>
                            </div>
 
-                           <x-submit-button>{{__('translate.log in')}}</x-submit-button>
+                           <x-submit-button>{{__('translate.log_in')}}</x-submit-button>
                        </form>
                        <p class="mt-2 text-center text-sm text-gray-400">
-                           {{__("translate.Don't have an account?")}}
-                           <a href="/register" class=" ml-2 font-medium text-black hover:text-indigo-500"> {{__('translate.Sign up for free')}} </a>
+                           {{__("translate.dont_have_an_account")}}
+                           <a href="/register" class=" ml-2 font-medium text-black hover:text-indigo-500"> {{__('translate.sign_up_for_free')}} </a>
                        </p>
                    </div>
                </div>

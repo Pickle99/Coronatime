@@ -4,7 +4,7 @@
             <img class="h-12 lg:mb-20 h-auto" src="{{asset('storage/images/coronalogo.png')}}" alt="Workflow">
         </div>
         <div>
-            <h2 class="text-center mob:my-16 mob:text-3xl lg:mt-24 lg:mb-14 lg:text-4xl font-extrabold text-black"> {{__("translate.Reset password")}}</h2>
+            <h2 class="text-center mob:my-16 mob:text-3xl lg:mt-24 lg:mb-14 lg:text-4xl font-extrabold text-black"> {{__("translate.reset_password")}}</h2>
         </div>
 
         <div class="mt-8">
@@ -20,7 +20,7 @@
                         <p class="text-red-500 text-lg mt-1">{{__("translate.$message")}}</p>
                         @enderror
                     </div>
-          <x-submit-button class="mt-100 lg:mt-1">{{__("translate.Reset password")}}</x-submit-button>
+          <x-submit-button class="mt-100 lg:mt-1">{{__("translate.reset_password")}}</x-submit-button>
                 </form>
             </div>
         </div>
