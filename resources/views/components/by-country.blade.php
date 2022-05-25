@@ -5,6 +5,7 @@
         <form class="mt-3.5" method="GET" action="#">
             @if(request('page'))
                 <input type="hidden" name="page" value="{{request('page')}}"/>
+                <input type="hidden" name="sort" value="{{request('sort')}}"/>
             @endif
             <input class="focus:outline-none" placeholder="{{__('translate.search')}}" type="text" name="search" value="{{request('search')}}"/>
         </form>
