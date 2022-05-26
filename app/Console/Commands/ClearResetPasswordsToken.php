@@ -2,24 +2,24 @@
 
 namespace App\Console\Commands;
 
-use App\Models\User;
+use App\Models\ResetPassword;
 use Illuminate\Console\Command;
 
-class ClearUnverifiedUsers extends Command
+class ClearResetPasswordsToken extends Command
 {
 	/**
 	 * The name and signature of the console command.
 	 *
 	 * @var string
 	 */
-	protected $signature = 'unverified:clear';
+	protected $signature = 'password:token:clear';
 
 	/**
 	 * The console command description.
 	 *
 	 * @var string
 	 */
-	protected $description = 'clear unverified users';
+	protected $description = 'clear reset passwords token for users';
 
 	/**
 	 * Execute the console command.
@@ -28,7 +28,7 @@ class ClearUnverifiedUsers extends Command
 	 */
 	public function handle()
 	{
-		User::where('email_verified_at', '=', null)->delete();
-		$this->info('Unverified users successfully deleted from database');
+		ResetPassword::where('user_id', '>', 0)->delete();
+		$this->info('Reset passwords token successfully deleted from database');
 	}
 }

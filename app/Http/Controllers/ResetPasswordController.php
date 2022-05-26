@@ -4,58 +4,47 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UserForgotPasswordRequest;
 use App\Http\Requests\UserResetPasswordRequest;
-use Illuminate\Auth\Events\PasswordReset;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Password;
+use App\Mail\PasswordReset;
+use App\Models\ResetPassword;
+use App\Models\User;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
+use Illuminate\View\View;
 
 class ResetPasswordController extends Controller
 {
-	public function forgot()
+	public function reset(UserForgotPasswordRequest $request): RedirectResponse
 	{
-		return view('components.user.forgot-password');
+		$request->validated();
+		$token = Str::random(64);
+		$user = User::where('email', $request->email)->first();
+		$resetPassword = ResetPassword::create([
+			'user_id'    => $user->id,
+			'email'      => $request->email,
+			'token'      => $token,
+		]);
+		Mail::to($request->email)->send(new PasswordReset($resetPassword));
+		return redirect('password/' . $token . '/reset');
 	}
 
-	public function reset(UserForgotPasswordRequest $request)
-	{
-		$status = Password::sendResetLink(
-			$request->only('email')
-		);
-
-		return $status === Password::RESET_LINK_SENT
-			? redirect('/verify-sent')
-			: back()->withErrors(['email' => __($status)]);
-	}
-
-	public function sent()
-	{
-		return view('components.user.email-verify');
-	}
-
-	public function edit($token, $user)
+	public function edit(string $token, string $user): View
 	{
 		return view('components.user.reset-password', [
 			'token'   => $token,
 			'user'    => $user, ]);
 	}
 
-	public function update(UserResetPasswordRequest $request)
+	public function update(UserResetPasswordRequest $request, string $token): RedirectResponse
 	{
-		$status = Password::reset(
-			$request->only('password', 'password_confirmation', 'token', 'email'),
-			function ($user, $password) {
-				$user->forceFill([
-					'password' => Hash::make($password),
-				])->setRememberToken(Str::random(60));
+		$request->validated();
+		$resetPassword = ResetPassword::where('token', $token)->first();
+		$user = User::find($resetPassword->user_id);
 
-				$user->save();
-
-				event(new PasswordReset($user));
-			}
-		);
-
-		return $status === Password::PASSWORD_RESET
-			? redirect('login')
-			: back()->withErrors(['email' => [__($status)]]);
+		$user->update([
+			'password' => bcrypt($request->password),
+		]);
+		$resetPassword->delete();
+		return redirect('/forgot/password/sent');
 	}
 }

@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Country;
 use App\Models\Info;
+use Illuminate\View\View;
 
 class StatisticsController extends Controller
 {
-	public function index()
+	public function index(): View
 	{
 		$countries = Country::all();
 

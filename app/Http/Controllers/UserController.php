@@ -2,23 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateUserRequest;
+use App\Http\Requests\StoreUserRequest;
 use App\Mail\VerifyEmail;
 use App\Models\User;
 use App\Models\VerifyUser;
 use Carbon\Carbon;
-use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
-	public function create()
-	{
-		return view('components.user.register');
-	}
-
-	public function store(CreateUserRequest $request)
+	public function store(StoreUserRequest $request): RedirectResponse
 	{
 		$validated = $request->validated();
 		$validated['password'] = bcrypt($validated['password']);
@@ -32,14 +27,7 @@ class UserController extends Controller
 		return redirect('/dashboard');
 	}
 
-//	public function verified(EmailVerificationRequest $request)
-//	{
-//		$request->fulfill();
-//		auth()->logout();
-//		return redirect('/login');
-//	}
-
-	public function verifyEmail($token)
+	public function verifyEmail(string $token): RedirectResponse
 	{
 		$verifiedUser = VerifyUser::where('token', $token)->first();
 		if (isset($verifiedUser))
@@ -56,10 +44,5 @@ class UserController extends Controller
 		}
 
 		return redirect('/login');
-	}
-
-	public function success()
-	{
-		auth()->logout();
 	}
 }

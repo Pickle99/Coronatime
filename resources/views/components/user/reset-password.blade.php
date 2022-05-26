@@ -9,7 +9,7 @@
 
         <div class="mt-8 ">
             <div class="mt-6">
-                <form action="{{route('password.update')}}" method="POST" class="space-y-6">
+                <form action="{{route('password.update', $token)}}" method="POST" class="space-y-6">
                     @csrf
                     <input type="hidden" name="token" value="{{$token}}"/>
                     <input type="hidden" name="email" value="{{$user}}"/>

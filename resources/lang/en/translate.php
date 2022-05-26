@@ -17,6 +17,7 @@ return [
 	'log_in'                                                                                                  => 'Log in',
 	'sign_in'                                                                                                 => 'Sign in',
 	'success_verified'                                                                                        => 'Your account is confirmed, you can sign in',
+	'success_reset'                                                                                           => 'Your password has been updated successfully',
 	'sign_up'                                                                                                 => 'Sign up',
 	'welcome_back_to_coronatime'                                                                              => 'Welcome to Coronatime',
 	'please_enter_required_info_to_sing_up'                                                                   => 'Please enter required info to sing up',

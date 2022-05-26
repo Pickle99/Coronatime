@@ -24,21 +24,22 @@ Route::prefix('/')->middleware('guest')->group(function () {
 	Route::view('login', 'components.user.login')->name('login.view');
 	Route::post('login', [AuthController::class, 'login'])->name('login');
 
-	Route::get('register', [UserController::class, 'create'])->name('register.create');
+	Route::view('register', 'components.user.register')->name('register.view');
 	Route::post('register', [UserController::class, 'store'])->name('register.store');
 
-	Route::get('forgot-password', [ResetPasswordController::class, 'forgot'])->name('password.request');
-	Route::post('forgot-password', [ResetPasswordController::class, 'reset'])->name('password.email');
-	Route::get('verify-sent', [ResetPasswordController::class, 'sent'])->name('password.sent');
-	Route::get('reset-password/{token}={email}', [ResetPasswordController::class, 'edit'])->name('password.reset');
-	Route::post('reset-password', [ResetPasswordController::class, 'update'])->name('password.update');
+	Route::view('forgot/password', 'components.user.forgot-password')->name('password.view');
+	Route::post('forgot/password', [ResetPasswordController::class, 'reset'])->name('password.email');
+	Route::view('password/{token}/reset', 'components.user.confirmation-email')->name('password.sent');
+	Route::get('reset/password/{token}={email}', [ResetPasswordController::class, 'edit'])->name('password.reset');
+	Route::post('reset/password/{token}', [ResetPasswordController::class, 'update'])->name('password.update');
+	Route::view('forgot/password/sent', 'components.user.reset-success')->name('reset.success');
 });
 
 Route::get('dashboard', [StatisticsController::class, 'index'])->name('dashboard')->middleware(['auth', 'verified']);
 
 Route::post('logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 
-Route::view('email/verify', 'components.user.email-verify')->name('verification.notice')->middleware('auth');
+Route::view('email/verify', 'components.user.confirmation-email')->name('verification.notice')->middleware('auth');
 
 Route::get('user/verify/{token}', [UserController::class, 'verifyEmail'])->name('user.verify');
 

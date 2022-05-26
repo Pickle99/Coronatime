@@ -21,7 +21,7 @@ class FetchApi extends Command
 	 *
 	 * @var string
 	 */
-	protected $description = 'Fetch api and store to database';
+	protected $description = 'fetch api and store to database';
 
 	/**
 	 * Execute the console command.

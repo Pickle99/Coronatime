@@ -60,6 +60,6 @@
     <div class="header">
         <h1>Recover password</h1>
         <p>click this button to recover a password</p>
-      <div class="link">  <a href="{{$url}}">RECOVER PASSWORD</a></div></div>
+      <div class="link">  <a href="{{url('/reset/password/' . $resetPassword->token . '=' .$resetPassword->email)}}">RECOVER PASSWORD</a></div></div>
 </div>
 </body>

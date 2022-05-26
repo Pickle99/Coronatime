@@ -19,6 +19,10 @@ class Kernel extends ConsoleKernel
 		// $schedule->command('inspire')->hourly();
 		$schedule->command('unverified:clear')->weekly()
 		->appendOutputTo('scheduler.log');
+		$schedule->command('verify:token:clear')->weekly()
+		->appendOutputTo('scheduler.log');
+		$schedule->command('password:token:clear')->weekly()
+		->appendOutputTo('scheduler.log');
 	}
 
 	/**
