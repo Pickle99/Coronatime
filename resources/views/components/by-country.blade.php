@@ -1,6 +1,6 @@
 
 <div class="px-4 sm:px-6 lg:px-8 mx-2 lg:mx-44">
-    <div class="my-10 flex items-center   border-2 rounded-xl w-fit">
+    <div class="my-10 flex items-center lg:flex lg:flex-col  border-2 rounded-xl w-fit">
         <div class="px-4"><img src="{{asset('storage/images/search.png')}}" alt="img"/></div>
         <form class="mt-3.5" method="GET" action="#">
             @if(request('page'))
@@ -77,9 +77,9 @@
                         @foreach($countries as $country)
                             <tr>
                                 <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{$country->name}}</td>
-                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{$country->infos->confirmed}}</td>
-                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{$country->infos->deaths}}</td>
-                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{$country->infos->recovered}}</td>
+                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{number_format($country->infos->confirmed)}}</td>
+                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{number_format($country->infos->deaths)}}</td>
+                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{number_format($country->infos->recovered)}}</td>
                             </tr>
                         @endforeach
                         </tbody>

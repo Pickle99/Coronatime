@@ -109,9 +109,9 @@ class StatisticsController extends Controller
 				'page'          => $page,
 				'countries'     => $countries,
 				'infos'         => $infos,
-				'confirmed'     => $confirmed,
-				'recovered'     => $recovered,
-				'deaths'        => $deaths,
+				'confirmed'     => number_format($confirmed),
+				'recovered'     => number_format($recovered),
+				'deaths'        => number_format($deaths),
 			]);
 		}
 	}
