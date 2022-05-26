@@ -38,5 +38,9 @@ Route::get('dashboard', [StatisticsController::class, 'index'])->name('dashboard
 
 Route::post('logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 
-Route::get('email/verify', [UserController::class, 'verifyEmail'])->name('verification.notice')->middleware('auth');
-Route::get('email/verify/{id}/{hash}', [UserController::class, 'verified'])->name('verification.verify')->middleware(['auth', 'signed']);
+Route::view('email/verify', 'components.user.email-verify')->name('verification.notice')->middleware('auth');
+
+Route::get('user/verify/{token}', [UserController::class, 'verifyEmail'])->name('user.verify');
+
+Route::view('verification/success/{token}', 'components.user.verification-success')->name('verify.success');
+Route::post('verification/success/{token}', [UserController::class, 'verified'])->name('verify.sign_in');
