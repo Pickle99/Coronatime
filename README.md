@@ -47,7 +47,7 @@ With HTTPS:
 <p>2. Next step requires you to run composer install in order to install all the dependencies.</p>
 <code>composer install</code>
 <p> 3. after you have installed all the PHP dependencies, it's time to install all the JS dependencies:</p>
-```npm install```
+<code>npm install</code>
 <p>and also: npm run dev</p>
 <p>in order to build your JS/SaaS resources.</p>
 <p>4. Now we need to set our env file. Go to the root of your project and execute this command.</p>
@@ -89,6 +89,8 @@ ____________
 <p id="migrate">if you've completed getting started section, then migrating database if fairly simple process, just execute:</p>
 <code> php artisan migrate </code>
 
+<p>To fetch api from database, please use:</p>
+ <code>php artisan api:fetch</code>
 
 __________
 
