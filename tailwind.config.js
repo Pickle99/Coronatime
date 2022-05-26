@@ -7,10 +7,10 @@ module.exports = {
   theme: {
     extend: {
         spacing: {
-          '100' : '27rem',
+          '100' : '22rem',
         },
         screens:{
-          'mob': '200px',
+          'mob': '380px',
         },
         opacity: {
           '0.08': '0.08',
