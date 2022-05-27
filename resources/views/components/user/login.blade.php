@@ -13,14 +13,15 @@
 
                <div class="mt-8">
                    <div class="mt-6">
-                       <form method="POST"  action="/login" class="space-y-6" id="regForm">
+                       <form method="POST"  action="/login" class="space-y-6" id="form">
                            @csrf
                            <div>
                                {{$a=false}}
                                <label for="username" class="block text-lg lg:text-sm font-bold text-black">{{__('translate.username')}}</label>
                                <div class="mt-1">
                                    <input id="username" value="{{old('user')}}" placeholder="{{__('translate.enter_unique_username_or_email')}}" name="user" type="text"
-  class="appearance-none block w-full @error('user') border-red-500 @enderror px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+  class="appearance-none block w-full @if($errors->has('user')) border-red-500  @endif
+   px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                </div>
                                @error("user")
                              <div class="flex items-center">
@@ -74,8 +75,10 @@
 {{--    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>--}}
 {{--    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>--}}
 
-    <!-- Laravel Javascript Validation -->
+{{--    <!-- Laravel Javascript Validation -->--}}
 {{--    <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>--}}
 
 {{--    {!! JsValidator::formRequest('App\Http\Requests\AuthRequest') !!}--}}
+
+
 </x-layout>

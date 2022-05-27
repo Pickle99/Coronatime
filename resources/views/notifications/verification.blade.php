@@ -52,6 +52,55 @@
          font-size: 25px;
          color: #010414;
      }
+     @media only screen and (max-width:500px) {
+         body{
+             display:flex;
+             justify-content: center;
+             justify-items: center;
+             align-items: center;
+             font-family:'Inter', sans-serif;
+         }
+
+         .image{
+             display:flex;
+             flex-direction: column;
+             align-items:center;
+         }
+         img{
+             width:20rem;
+         }
+         .header{
+             display:flex;
+             flex-direction: column;
+             align-items: center;
+             margin-top:50px;
+         }
+
+         .link {
+             border-radius: 8px;
+             padding: 10px 50px;
+             background: #0FBA68;
+             margin-top:40px;
+         }
+
+         a {
+
+             text-decoration:none;
+             color:#ffffff;
+             padding: 20px 50px;
+
+         }
+         p{
+             margin-top:-2px;
+             font-size: 18px;
+             color: darkgray;
+         }
+
+         h1{
+             font-size: 25px;
+             color: #010414;
+         }
+     }
 
  </style>
 <body>
@@ -61,5 +110,6 @@
         <h1>Confirmation email</h1>
         <p>click this button to verify your email</p>
       <div class="link">  <a href="{{url('/user/verify/' . $user->verifyUser->token)}}">VERIFY EMAIL</a></div></div>
+
 </div>
 </body>
