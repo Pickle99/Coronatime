@@ -56,7 +56,7 @@
  </style>
 <body>
 <div class="verify">
-    <div class="image"><img class="corona-img" src="{{asset('/storage/images/coronascreen.png')}}" alt="img"></div>
+    <div class="image"><img class="corona-img" src="{{asset('/images/coronascreen.png')}}" alt="img"></div>
     <div class="header">
         <h1>Recover password</h1>
         <p>click this button to recover a password</p>

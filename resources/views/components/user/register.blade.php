@@ -3,7 +3,7 @@
     <x-panels.login-flex>
         <div class="lg:mx-auto lg:w-full lg:max-w-sm lg:w-96 lg:ml-20 mb-8 lg:mb-0">
             <div>
-                <img class="mt-4 mob:mt-16 mb-4 mob:mt-10 h-12 xl:mb-20  w-auto" src="{{asset('storage/images/coronalogo.png')}}" alt="Workflow">
+                <img class="mt-4 mob:mt-16 mb-4 mob:mt-10 h-12 xl:mb-20  w-auto" src="{{asset('/images/coronalogo.png')}}" alt="Workflow">
                 <h2 class="mb-4 text-2xl mob:text-3xl font-bold text-black" >{{__('translate.welcome_back_to_coronatime')}}</h2>
                 <p class="mt-2 text-lg text-gray-400">
                   {{__('translate.please_enter_required_info_to_sing_up')}}

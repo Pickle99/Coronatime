@@ -4,7 +4,7 @@
        <x-panels.login-flex>
            <div class="lg:mx-auto lg:w-full lg:max-w-sm lg:w-96 lg:ml-20">
                <div>
-                   <img class=" mt-16 mb-10 lg:h-12  w-auto" src="{{asset('storage/images/coronalogo.png')}}" alt="Workflow">
+                   <img class=" mt-16 mb-10 lg:h-12  w-auto" src="{{asset('/images/coronalogo.png')}}" alt="Workflow">
                    <h2 class="text-3xl lg:mb-4 lg:text-4xl font-bold text-black">{{__('translate.welcome_back')}}</h2>
                    <p class="mt-2 text-lg text-gray-400">
                        {{__('translate.welcome_back_please_enter_your_details')}}

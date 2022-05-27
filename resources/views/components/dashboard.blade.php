@@ -1,6 +1,6 @@
 <x-layout>
 <header class="border-b-2 h-20 flex items-center justify-between">
-        <img class="ml-4 w-30 h-10 lg:ml-52 h-12 lg:w-auto" src="{{asset('storage/images/coronalogo.png')}}" alt="Workflow">
+        <img class="ml-4 w-30 h-10 lg:ml-52 h-12 lg:w-auto" src="{{asset('/images/coronalogo.png')}}" alt="Workflow">
        <div class="flex items-center">
        <x-dropdown class="mr-5 lg:mr-0"></x-dropdown>
 

@@ -1,7 +1,7 @@
 
 <div class="px-4 sm:px-6 lg:px-8 mx-2 lg:mx-44">
     <div class="my-10 flex items-center   border-2 rounded-xl w-fit">
-        <div class="px-4"><img src="{{asset('storage/images/search.png')}}" alt="img"/></div>
+        <div class="px-4"><img src="{{asset('/images/search.png')}}" alt="img"/></div>
         <form class="mt-3.5" method="GET" action="#">
             @if(request('page'))
                 <input type="hidden" name="page" value="{{request('page')}}"/>

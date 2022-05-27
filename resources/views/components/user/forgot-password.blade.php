@@ -1,7 +1,7 @@
 <x-layout>
     <div class="mt-10 mx-auto w-full max-w-sm lg:w-96 px-4 lg:px-0">
         <div class="lg:flex lg:justify-center">
-            <img class="h-12 lg:mb-20 h-auto" src="{{asset('storage/images/coronalogo.png')}}" alt="Workflow">
+            <img class="h-12 lg:mb-20 h-auto" src="{{asset('/images/coronalogo.png')}}" alt="Workflow">
         </div>
         <div>
             <h2 class="text-center mob:my-16 mob:text-3xl lg:mt-24 lg:mb-14 lg:text-4xl font-extrabold text-black"> {{__("translate.reset_password")}}</h2>
