@@ -29,6 +29,7 @@ class AuthController extends Controller
 		}
 
 		session()->regenerate();
+
 		return redirect('/dashboard');
 	}
 }

@@ -13,15 +13,20 @@
 
                <div class="mt-8">
                    <div class="mt-6">
-                       <form method="POST"  action="/login" class="space-y-6">
+                       <form method="POST"  action="/login" class="space-y-6" id="regForm">
                            @csrf
                            <div>
+                               {{$a=false}}
                                <label for="username" class="block text-lg lg:text-sm font-bold text-black">{{__('translate.username')}}</label>
                                <div class="mt-1">
-                                   <input id="username" value="{{old('user')}}" placeholder="{{__('translate.enter_unique_username_or_email')}}" name="user" type="text" class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                   <input id="username" value="{{old('user')}}" placeholder="{{__('translate.enter_unique_username_or_email')}}" name="user" type="text"
+  class="appearance-none block w-full @error('user') border-red-500 @enderror px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                </div>
                                @error("user")
-                               <p class="text-red-500 text-lg mt-1">{{__("translate.$message")}}</p>
+                             <div class="flex items-center">
+                                 <img class="flex mr-2" src="{{asset('images/err.png')}}" alt="img"/>
+                                 <p class="text-red-500 text-lg mt-1">{{__("translate.$message")}}</p>
+                             </div>
                                @enderror
                            </div>
 
@@ -29,10 +34,14 @@
                            <div>
                                <label for="password" class="block text-lg lg:text-sm font-bold text-black">{{__('translate.password')}}</label>
                                <div class="mt-1">
-                                   <input id="password" value="{{old('password')}}" placeholder="{{__('translate.fill_in_password')}}" name="password" type="password" class="appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                   <input id="password" value="{{old('password')}}" placeholder="{{__('translate.fill_in_password')}}" name="password" type="password"
+                           class="appearance-none block w-full @error('password') border-red-500 @enderror px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                </div>
                                @error('password')
-                               <p class="text-red-500 text-lg mt-1">{{__("translate.$message")}}</p>
+                               <div class="flex items-center">
+                                   <img class="flex mr-2" src="{{asset('images/err.png')}}" alt="img"/>
+                                   <p class="text-red-500 text-lg mt-1">{{__("translate.$message")}}</p>
+                               </div>
                                @enderror
                            </div>
 
@@ -61,4 +70,12 @@
        </x-panels.login-flex>
        <x-vaccine-img></x-vaccine-img>
    </x-panels.panel-login>
+    <!-- Javascript Requirements -->
+{{--    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>--}}
+{{--    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>--}}
+
+    <!-- Laravel Javascript Validation -->
+{{--    <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>--}}
+
+{{--    {!! JsValidator::formRequest('App\Http\Requests\AuthRequest') !!}--}}
 </x-layout>

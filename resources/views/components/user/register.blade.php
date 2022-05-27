@@ -18,40 +18,56 @@
                             <div>
                                 <label for="username" class="block text-xs mob:text-lg font-bold text-black">{{__('translate.username')}}</label>
                                 <div class="mt-1">
-                                    <input id="username" value="{{old('username')}}" placeholder="{{__('translate.enter_unique_username')}}" name="username" type="text" class="text-xs appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                    <input id="username" value="{{old('username')}}" placeholder="{{__('translate.enter_unique_username')}}" name="username" type="text"
+                                           class="text-xs @error('username') border-red-500 @enderror appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                 </div>
                                 @error('username')
-                                <p class="text-red-500 text-lg mt-1">{{__("translate.$message")}}</p>
+                                <div class="flex items-center">
+                                    <img class="flex mr-2" src="{{asset('images/err.png')}}" alt="img"/>
+                                    <p class="text-red-500 text-lg mt-1">{{__("translate.$message")}}</p>
+                                </div>
                                 @enderror
                             </div>
 
                         <div>
                             <label for="email" class="block text-xs mob:text-lg font-bold text-black">{{__('translate.email')}}</label>
                             <div class="mt-1">
-                                <input id="email" value="{{old('email')}}" placeholder="{{__('translate.enter_your_email')}}" name="email" type="email" class="text-xs appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                <input id="email" value="{{old('email')}}" placeholder="{{__('translate.enter_your_email')}}" name="email" type="email"
+                                       class="text-xs @error('email') border-red-500 @enderror appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             </div>
                             @error('email')
-                            <p class="text-red-500 text-lg mt-1">{{__("translate.$message")}}</p>
+                            <div class="flex items-center">
+                                <img class="flex mr-2" src="{{asset('images/err.png')}}" alt="img"/>
+                                <p class="text-red-500 text-lg mt-1">{{__("translate.$message")}}</p>
+                            </div>
                             @enderror
                         </div>
 
                         <div class="space-y-1">
                             <label for="password" class="block text-xs mob:text-lg font-bold text-black"> {{__('translate.password')}}</label>
                             <div class="mt-1">
-                                <input id="password"  placeholder="{{__('translate.fill_in_password')}}" name="password" type="password"  class="text-xs appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                <input id="password"  placeholder="{{__('translate.fill_in_password')}}" name="password" type="password"
+                                       class="text-xs @error('password') border-red-500 @enderror appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             </div>
                             @error('password')
-                            <p class="text-red-500 text-lg mt-1">{{__("translate.$message")}}</p>
+                            <div class="flex items-center">
+                                <img class="flex mr-2" src="{{asset('images/err.png')}}" alt="img"/>
+                                <p class="text-red-500 text-lg mt-1">{{__("translate.$message")}}</p>
+                            </div>
                             @enderror
                         </div>
 
                         <div class="space-y-1">
                             <label for="repeat" class="block text-xs mob:text-lg font-bold text-black"> {{__('translate.repeat_password')}}</label>
                             <div class="mt-1">
-                                <input id="repeat"  placeholder="{{__('translate.repeat_password')}}" name="repeat" type="password"  class="text-xs appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                <input id="repeat"  placeholder="{{__('translate.repeat_password')}}" name="repeat" type="password"
+                                       class="text-xs @error('repeat') border-red-500 @enderror appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             </div>
                             @error('repeat')
-                            <p class="text-red-500 text-lg mt-1">{{__("translate.$message")}}</p>
+                            <div class="flex items-center">
+                                <img class="flex mr-2" src="{{asset('images/err.png')}}" alt="img"/>
+                                <p class="text-red-500 text-lg mt-1">{{__("translate.$message")}}</p>
+                            </div>
                             @enderror
                         </div>
 
