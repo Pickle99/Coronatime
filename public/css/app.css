@@ -448,6 +448,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 .top-0 {
   top: 0px;
 }
+.top-40 {
+  top: 10rem;
+}
+.top-96 {
+  top: 24rem;
+}
+.top-100 {
+  top: 22rem;
+}
+.top-80 {
+  top: 20rem;
+}
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -557,6 +569,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mt-36 {
   margin-top: 9rem;
+}
+.-mt-10 {
+  margin-top: -2.5rem;
+}
+.-ml-10 {
+  margin-left: -2.5rem;
 }
 .block {
   display: block;
@@ -986,8 +1004,32 @@ Ensure the default browser behavior of the `hidden` attribute.
 .focus\:ring-offset-gray-100:focus {
   --tw-ring-offset-color: #f3f4f6;
 }
+.group:nth-child(odd) .group-odd\:hidden {
+  display: none;
+}
+.group:target .group-target\:hidden {
+  display: none;
+}
+.group[open] .group-open\:hidden {
+  display: none;
+}
+.group:checked .group-checked\:hidden {
+  display: none;
+}
+.group:focus-within .group-focus-within\:hidden {
+  display: none;
+}
 .group:hover .group-hover\:block {
   display: block;
+}
+.group:hover .group-hover\:hidden {
+  display: none;
+}
+.group:focus .group-focus\:hidden {
+  display: none;
+}
+.group:active .group-active\:hidden {
+  display: none;
 }
 @media (min-width: 640px) {
 

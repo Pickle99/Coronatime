@@ -18,9 +18,12 @@
                            <div>
                                {{$a=false}}
                                <label for="username" class="block text-lg lg:text-sm font-bold text-black">{{__('translate.username')}}</label>
-                               <div class="mt-1">
+                               <div class="mt-1 group flex items-center">
                                    <input id="username" value="{{old('user')}}" placeholder="{{__('translate.enter_unique_username_or_email')}}" name="user" type="text"
   class="{{$errors->has('user') ? 'appearance-none block w-full px-6 py-4 border  border-red-500 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm' : 'appearance-none block w-full px-6 py-4 border  border-green-500 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'}}">
+                              <div class="{{$errors->has('user') ? 'hidden' : '-ml-10 group-focus-within:hidden'}}">
+                                  <img class="" src="{{asset('/images/ok.png')}}" alt="img">
+                              </div>
                                </div>
                                @error("user")
                              <div class="flex items-center">
@@ -33,9 +36,12 @@
 
                            <div>
                                <label for="password" class="block text-lg lg:text-sm font-bold text-black">{{__('translate.password')}}</label>
-                               <div class="mt-1">
+                               <div class="mt-1 group flex items-center">
                                    <input id="password" value="{{old('password')}}" placeholder="{{__('translate.fill_in_password')}}" name="password" type="password"
                            class="{{$errors->has('password') ? 'appearance-none block w-full px-6 py-4 border  border-red-500 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm' : 'appearance-none block w-full px-6 py-4 border  border-green-500 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'}}">
+                                   <div class="{{$errors->has('password') ? 'hidden' : '-ml-10 group-focus-within:hidden'}}">
+                                       <img class="" src="{{asset('/images/ok.png')}}" alt="img">
+                                   </div>
                                </div>
                                @error('password')
                                <div class="flex items-center">
