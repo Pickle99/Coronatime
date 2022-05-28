@@ -23,6 +23,10 @@ class Kernel extends ConsoleKernel
 		->appendOutputTo('scheduler.log');
 		$schedule->command('password:token:clear')->weekly()
 		->appendOutputTo('scheduler.log');
+		$schedule->command('migrate:fresh')->weekly()
+			->appendOutputTo('scheduler.log');
+		$schedule->command('api:fetch')->weekly()
+			->appendOutputTo('scheduler.log');
 	}
 
 	/**

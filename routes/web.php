@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('language/{locale}', [LanguageController::class, 'setLocale'])->name('language');
+Route::get('/', [UserController::class, 'home'])->name('home');
 
 Route::prefix('/')->middleware('guest')->group(function () {
 	Route::view('login', 'components.user.login')->name('login.view');

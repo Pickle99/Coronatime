@@ -13,6 +13,16 @@ use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
+	public function home(): RedirectResponse
+	{
+		if (auth()->user())
+		{
+			return redirect('/dashboard');
+		}
+
+		return redirect('/login');
+	}
+
 	public function store(StoreUserRequest $request): RedirectResponse
 	{
 		$validated = $request->validated();
