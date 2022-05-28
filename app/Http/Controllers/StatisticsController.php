@@ -10,18 +10,12 @@ class StatisticsController extends Controller
 {
 	public function index(): View
 	{
-		$countries = Country::all();
-
+		$countries = Country::latest()->filter(request(['search']))->get();
 		$infos = Info::all();
 		$page = request('page');
 		$confirmed = Info::sum('confirmed');
 		$recovered = Info::sum('recovered');
 		$deaths = Info::sum('deaths');
-
-		if (request()->get('search'))
-		{
-			$countries = Country::latest()->filter(request(['search']))->get();
-		}
 
 		//for by country name sorting
 
