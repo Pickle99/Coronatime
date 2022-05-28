@@ -18,7 +18,7 @@
                                 <label for="username" class="block text-xs mob:text-lg font-bold text-black">{{__('translate.username')}}</label>
                                 <div class="mt-1">
                                     <input id="username" value="{{old('username')}}" placeholder="{{__('translate.enter_unique_username')}}" name="username" type="text"
-                                           class="text-xs @if($errors->has('username')) border-red-500  @endif @if(!$errors->has('username')) border-green-500 @endif appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                           class="{{$errors->has('username') ? 'appearance-none block w-full px-6 py-4 border  border-red-500 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm' : 'appearance-none block w-full px-6 py-4 border  border-green-500 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'}}">
                                 </div>
                                 @error('username')
                                 <div class="flex items-center">
@@ -32,7 +32,7 @@
                             <label for="email" class="block text-xs mob:text-lg font-bold text-black">{{__('translate.email')}}</label>
                             <div class="mt-1">
                                 <input id="email" value="{{old('email')}}" placeholder="{{__('translate.enter_your_email')}}" name="email" type="email"
-                                       class="text-xs @if($errors->has('email')) border-red-500  @endif @if(!$errors->has('email')) border-green-500 @endif appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                       class="{{$errors->has('email') ? 'appearance-none block w-full px-6 py-4 border  border-red-500 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm' : 'appearance-none block w-full px-6 py-4 border  border-green-500 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'}}">
                             </div>
                             @error('email')
                             <div class="flex items-center">
@@ -46,7 +46,7 @@
                             <label for="password" class="block text-xs mob:text-lg font-bold text-black"> {{__('translate.password')}}</label>
                             <div class="mt-1">
                                 <input id="password"  placeholder="{{__('translate.fill_in_password')}}" name="password" type="password"
-                                       class="text-xs @if($errors->has('password')) border-red-500  @endif @if(!$errors->has('password')) border-green-500 @endif appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                       class="{{$errors->has('password') ? 'appearance-none block w-full px-6 py-4 border  border-red-500 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm' : 'appearance-none block w-full px-6 py-4 border  border-green-500 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'}}">
                             </div>
                             @error('password')
                             <div class="flex items-center">
@@ -60,7 +60,7 @@
                             <label for="repeat" class="block text-xs mob:text-lg font-bold text-black"> {{__('translate.repeat_password')}}</label>
                             <div class="mt-1">
                                 <input id="repeat"  placeholder="{{__('translate.repeat_password')}}" name="repeat" type="password"
-                                       class="text-xs @if($errors->has('repeat')) border-red-500  @endif @if(!$errors->has('repeat')) border-green-500 @endif appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                       class="{{$errors->has('repeat') ? 'appearance-none block w-full px-6 py-4 border  border-red-500 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm' : 'appearance-none block w-full px-6 py-4 border  border-green-500 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'}}">
                             </div>
                             @error('repeat')
                             <div class="flex items-center">
