@@ -87,7 +87,7 @@
 
              text-decoration:none;
              color:#ffffff;
-             padding: 20px 50px;
+             padding: 20px 30px;
 
          }
          p{

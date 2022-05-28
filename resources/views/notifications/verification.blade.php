@@ -87,7 +87,7 @@
 
              text-decoration:none;
              color:#ffffff;
-             padding: 20px 50px;
+             padding: 20px 30px;
 
          }
          p{
@@ -109,7 +109,6 @@
     <div class="header">
         <h1>Confirmation email</h1>
         <p>click this button to verify your email</p>
-      <div class="link">  <a href="{{url('/user/verify/' . $user->verifyUser->token)}}">VERIFY EMAIL</a></div></div>
-
+    <div class="link">  <a href="{{url('/user/verify/' . $user->verifyUser->token)}}">VERIFY EMAIL</a></div></div>
 </div>
 </body>
