@@ -22,8 +22,8 @@
                                     {{__('translate.location')}}
                                     <span class="flex-none rounded">
                                         <div class="ml-2">
-                                        <a href="/dashboard?{{http_build_query(request()->except('sort'))}}&sort=country_asc"> <img class="-mb-2" alt="img" src="{{asset('/storage/images/vector.png')}}"/></a>
-                                       <a href="/dashboard?{{http_build_query(request()->except('sort'))}}&sort=country_desc"> <img class="rotate-180" alt="img" src="{{asset('/storage/images/vector.png')}}"/></a>
+                                        <a href="/dashboard?{{http_build_query(request()->except('sort'))}}&sort=country_asc"> <img class="-mb-2" alt="img" src="{{asset('/images/vector.png')}}"/></a>
+                                       <a href="/dashboard?{{http_build_query(request()->except('sort'))}}&sort=country_desc"> <img class="rotate-180" alt="img" src="{{asset('/images/vector.png')}}"/></a>
                                     </div>
                     </span>
                                 </span>
@@ -34,8 +34,8 @@
                     <span class="flex-none rounded">
 
                                       <div class="ml-2">
-                                        <a href="/dashboard?{{http_build_query(request()->except('sort'))}}&sort=cases_asc"> <img class="-mb-2" alt="img" src="{{asset('/storage/images/vector.png')}}"/></a>
-                                       <a href="/dashboard?{{http_build_query(request()->except('sort'))}}&sort=cases_desc"> <img class="rotate-180" alt="img" src="{{asset('/storage/images/vector.png')}}"/></a>
+                                        <a href="/dashboard?{{http_build_query(request()->except('sort'))}}&sort=cases_asc"> <img class="-mb-2" alt="img" src="{{asset('/images/vector.png')}}"/></a>
+                                       <a href="/dashboard?{{http_build_query(request()->except('sort'))}}&sort=cases_desc"> <img class="rotate-180" alt="img" src="{{asset('/images/vector.png')}}"/></a>
                                     </div>
 
                     </span>
@@ -46,8 +46,8 @@
                                     {{__('translate.deaths')}}
                                     <span class="flex-none rounded">
                                          <div class="ml-2">
-                                        <a href="/dashboard?{{http_build_query(request()->except('sort'))}}&sort=deaths_asc"> <img class="-mb-2" alt="img" src="{{asset('/storage/images/vector.png')}}"/></a>
-                                       <a href="/dashboard?{{http_build_query(request()->except('sort'))}}&sort=deaths_desc"> <img class="rotate-180" alt="img" src="{{asset('/storage/images/vector.png')}}"/></a>
+                                        <a href="/dashboard?{{http_build_query(request()->except('sort'))}}&sort=deaths_asc"> <img class="-mb-2" alt="img" src="{{asset('images/vector.png')}}"/></a>
+                                       <a href="/dashboard?{{http_build_query(request()->except('sort'))}}&sort=deaths_desc"> <img class="rotate-180" alt="img" src="{{asset('/images/vector.png')}}"/></a>
                                     </div>
                     </span>
                                 </span>
@@ -58,8 +58,8 @@
                                     {{__('translate.recovered')}}
                                     <span class="flex-none rounded">
                                         <div class="ml-2">
-                                        <a href="/dashboard?{{http_build_query(request()->except('sort'))}}&sort=recovered_asc"> <img class="-mb-2" alt="img" src="{{asset('/storage/images/vector.png')}}"/></a>
-                                       <a href="/dashboard?{{http_build_query(request()->except('sort'))}}&sort=recovered_desc"> <img class="rotate-180" alt="img" src="{{asset('/storage/images/vector.png')}}"/></a>
+                                        <a href="/dashboard?{{http_build_query(request()->except('sort'))}}&sort=recovered_asc"> <img class="-mb-2" alt="img" src="{{asset('/images/vector.png')}}"/></a>
+                                       <a href="/dashboard?{{http_build_query(request()->except('sort'))}}&sort=recovered_desc"> <img class="rotate-180" alt="img" src="{{asset('/images/vector.png')}}"/></a>
                                     </div>
                     </span>
                                 </span>
