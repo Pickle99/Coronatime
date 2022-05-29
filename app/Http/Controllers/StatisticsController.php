@@ -98,15 +98,13 @@ class StatisticsController extends Controller
 			}
 		}
 
-		{
-			return view('components.dashboard', [
-				'page'          => $page,
-				'countries'     => $countries,
-				'infos'         => $infos,
-				'confirmed'     => number_format($confirmed),
-				'recovered'     => number_format($recovered),
-				'deaths'        => number_format($deaths),
-			]);
-		}
+		return view('components.dashboard', [
+			'page'          => $page,
+			'countries'     => $countries,
+			'infos'         => $infos,
+			'confirmed'     => number_format($confirmed),
+			'recovered'     => number_format($recovered),
+			'deaths'        => number_format($deaths),
+		]);
 	}
 }
