@@ -82,13 +82,6 @@
                             @enderror
                         </div>
 
-
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center">
-                                <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
-                                <label for="remember-me" class="ml-2 block text-sm text-gray-900"> {{__('translate.remember_this_device')}} </label>
-                            </div>
-                        </div>
                         <x-submit-button>{{__('translate.sign_up')}}</x-submit-button>
                     </form>
                     <p class="mt-2 text-center text-sm text-gray-400">
