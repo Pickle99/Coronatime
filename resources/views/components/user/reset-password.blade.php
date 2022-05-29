@@ -14,18 +14,31 @@
                     <input type="hidden" name="token" value="{{$token}}"/>
                     <input type="hidden" name="email" value="{{$user}}"/>
                     <div>
-                        <label for="password" class="block text-xs mob:text-lg  font-bold text-black"> {{__("translate.new_password")}} </label>
-                        <div class="mt-1">
-                            <input id="password" placeholder="{{__("translate.enter_new_password")}}" name="password" type="password" class="text-sm appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <label for="password" class="block text-xs mob:text-lg font-bold text-black"> {{__("translate.new_password")}} </label>
+                        <div class="mt-1 flex group items-center">
+                            <input id="password" placeholder="{{__("translate.enter_new_password")}}" name="password"
+                                   type="password"
+                                   class="{{$errors->has('password') ? 'appearance-none block w-full px-6 py-4 border  border-red-500 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm' : 'appearance-none block w-full px-6 py-4 border  border-green-500 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'}}">
+                            <div class="{{$errors->has('password') ? 'hidden' : '-ml-10 group-focus-within:hidden'}}">
+                                <img class="" src="{{asset('/images/ok.png')}}" alt="img">
+                            </div>
                         </div>
                         @error('password')
-                        <p class="text-red-500 text-lg mt-1">{{__("translate.$message")}}</p>
+                        <div class="flex items-center">
+                            <img class="flex mr-2" src="{{asset('images/err.png')}}" alt="img"/>
+                            <p class="text-red-500 text-lg mt-1">{{__("translate.$message")}}</p>
+                        </div>
                         @enderror
                     </div>
                     <div>
                         <label for="passwords" class="block text-xs mob:text-lg  font-bold text-black"> {{__("translate.repeat_password")}} </label>
-                        <div class="mt-1">
-                            <input id="passwords" placeholder="{{__("translate.repeat_password")}}" name="password_confirmation" type="password" class="text-xs appearance-none block w-full px-6 py-4 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <div class="mt-1 group flex items-center">
+                            <input id="passwords" placeholder="{{__("translate.repeat_password")}}" name="password_confirmation"
+                                   type="password"
+                                   class="{{$errors->has('password_confirmation') ? 'appearance-none block w-full px-6 py-4 border  border-red-500 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm' : 'appearance-none block w-full px-6 py-4 border  border-green-500 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'}}">
+                            <div class="{{$errors->has('password_confirmation') ? 'hidden' : '-ml-10 group-focus-within:hidden'}}">
+                                <img class="" src="{{asset('/images/ok.png')}}" alt="img">
+                            </div>
                         </div>
                     </div>
                   <x-submit-button class="mt-80 lg:mt-20 mb-10 mob:mb-0 lg:mt-1">{{__("translate.save")}}</x-submit-button>

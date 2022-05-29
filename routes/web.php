@@ -23,6 +23,7 @@ Route::get('/', [UserController::class, 'home'])->name('home');
 
 Route::prefix('/')->middleware('guest')->group(function () {
 	Route::view('login', 'components.user.login')->name('login.view');
+
 	Route::post('login', [AuthController::class, 'login'])->name('login');
 
 	Route::view('register', 'components.user.register')->name('register.view');
