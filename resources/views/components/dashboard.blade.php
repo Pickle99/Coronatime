@@ -31,8 +31,8 @@
     <div class="mx-4 mt-10 lg:mx-52 lg:mt-10">
         <h1 class="text-black text-2xl font-bold lg:text-3xl">{{__('translate.worldwide_stats')}}</h1>
         <div class="flex mt-10 h-10 border-b-2">
-                <a href="/dashboard?page=worldwide&{{http_build_query(request()->except('page'))}}" class="{{$page === 'worldwide' || is_null($page) ? 'font-bold border-b-4 border-black text-lg   mr-20' : 'text-lg mr-20'}}" ><span class="block">{{__('translate.worldwide')}}</span></a>
-            <a href="/dashboard?page=country&{{http_build_query(request()->except('page'))}}"  class="{{$page === 'country' ? 'w-fit font-bold border-b-4 border-black text-lg  mr-20' : 'text-lg mr-20'}}" ><span class="block w-40">{{__('translate.by_country')}}</span></a>
+                <a href="/dashboard?page=worldwide&{{http_build_query(request()->except('page'))}}" class="{{$page === 'worldwide' || is_null($page) ? 'font-bold border-b-4 border-black text-lg   mr-20' : 'text-lg mr-20'}}" ><span class="block w-auto">{{__('translate.worldwide')}}</span></a>
+            <a href="/dashboard?page=country&{{http_build_query(request()->except('page'))}}"  class="{{$page === 'country' ? 'w-fit font-bold border-b-4 border-black text-lg  mr-20' : 'text-lg mr-20'}}" ><span class="block w-auto">{{__('translate.by_country')}}</span></a>
             </div>
     </div>
     <div>
