@@ -7,9 +7,9 @@
 
 
 <body>
-<div style="font-family:'Inter', sans-serif; width:100%; text-align:center; margin-top:150px;">
+<div style="font-family:'Inter', sans-serif; width:100%; text-align:center;">
     <div><img style="width:40rem;" src="{{asset('/images/coronascreen.png')}}" alt="img"></div>
-    <div style="margin-top:50px; position:relative; ">
+    <div style="margin-top:50px; position:relative; margin-bottom:50px; ">
         <h1 style="font-size: 25px;
          color: #010414;">Recover password</h1>
         <p style="margin-top:-2px;
