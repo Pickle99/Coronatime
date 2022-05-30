@@ -8,6 +8,9 @@ use Illuminate\View\View;
 
 class StatisticsController extends Controller
 {
+	/*
+	Show country statistics
+	*/
 	public function index(): View
 	{
 		$countries = Country::latest()->filter(request(['search']))->get();

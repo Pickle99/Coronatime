@@ -23,7 +23,7 @@ class RegisterController extends Controller
 		return redirect('/login');
 	}
 
-	public function store(RegisterRequest $request): RedirectResponse
+	public function createUser(RegisterRequest $request): RedirectResponse
 	{
 		$validated = $request->validated();
 		$validated['password'] = bcrypt($validated['password']);

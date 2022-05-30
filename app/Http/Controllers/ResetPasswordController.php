@@ -14,7 +14,7 @@ use Illuminate\View\View;
 
 class ResetPasswordController extends Controller
 {
-	public function reset(ForgotPasswordRequest $request): RedirectResponse
+	public function resetPassword(ForgotPasswordRequest $request): RedirectResponse
 	{
 		$request->validated();
 		$token = Str::random(64);
@@ -28,14 +28,14 @@ class ResetPasswordController extends Controller
 		return redirect('password/' . $token . '/reset');
 	}
 
-	public function edit(string $token, string $user): View
+	public function editPassword(string $token, string $user): View
 	{
 		return view('components.user.reset-password', [
 			'token'   => $token,
 			'user'    => $user, ]);
 	}
 
-	public function update(ResetPasswordRequest $request, string $token): RedirectResponse
+	public function updatePassword(ResetPasswordRequest $request, string $token): RedirectResponse
 	{
 		$request->validated();
 		$resetPassword = ResetPassword::where('token', $token)->first();
