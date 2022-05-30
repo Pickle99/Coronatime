@@ -4,7 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\StatisticsController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,15 +19,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('language/{locale}', [LanguageController::class, 'setLocale'])->name('language');
-Route::get('/', [UserController::class, 'home'])->name('home');
+Route::get('/', [RegisterController::class, 'home'])->name('home');
 
-Route::prefix('/')->middleware('guest')->group(function () {
+Route::middleware('guest')->group(function () {
 	Route::view('login', 'components.user.login')->name('login.view');
 
 	Route::post('login', [AuthController::class, 'login'])->name('login');
 
 	Route::view('register', 'components.user.register')->name('register.view');
-	Route::post('register', [UserController::class, 'store'])->name('register.store');
+	Route::post('register', [RegisterController::class, 'store'])->name('register.store');
 
 	Route::view('forgot/password', 'components.user.forgot-password')->name('password.view');
 	Route::post('forgot/password', [ResetPasswordController::class, 'reset'])->name('password.email');
@@ -43,7 +43,7 @@ Route::post('logout', [AuthController::class, 'logout'])->name('logout')->middle
 
 Route::view('email/verify', 'components.user.confirmation-email')->name('verification.notice')->middleware('auth');
 
-Route::get('user/verify/{token}', [UserController::class, 'verifyEmail'])->name('user.verify');
+Route::get('user/verify/{token}', [RegisterController::class, 'verifyEmail'])->name('user.verify');
 
 Route::view('verification/success/{token}', 'components.user.verification-success')->name('verify.success');
-Route::post('verification/success/{token}', [UserController::class, 'verified'])->name('verify.sign_in');
+Route::post('verification/success/{token}', [RegisterController::class, 'verified'])->name('verify.sign_in');

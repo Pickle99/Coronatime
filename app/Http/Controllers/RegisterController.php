@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\RegisterRequest;
 use App\Mail\VerifyEmail;
 use App\Models\User;
 use App\Models\VerifyUser;
@@ -11,7 +11,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
-class UserController extends Controller
+class RegisterController extends Controller
 {
 	public function home(): RedirectResponse
 	{
@@ -23,7 +23,7 @@ class UserController extends Controller
 		return redirect('/login');
 	}
 
-	public function store(StoreUserRequest $request): RedirectResponse
+	public function store(RegisterRequest $request): RedirectResponse
 	{
 		$validated = $request->validated();
 		$validated['password'] = bcrypt($validated['password']);

@@ -12,7 +12,7 @@ class ClearResetPasswordsToken extends Command
 	 *
 	 * @var string
 	 */
-	protected $signature = 'password:token:clear';
+	protected $signature = 'password:token-clear';
 
 	/**
 	 * The console command description.

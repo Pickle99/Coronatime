@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\UserForgotPasswordRequest;
-use App\Http\Requests\UserResetPasswordRequest;
+use App\Http\Requests\ForgotPasswordRequest;
+use App\Http\Requests\ResetPasswordRequest;
 use App\Mail\PasswordReset;
 use App\Models\ResetPassword;
 use App\Models\User;
@@ -14,7 +14,7 @@ use Illuminate\View\View;
 
 class ResetPasswordController extends Controller
 {
-	public function reset(UserForgotPasswordRequest $request): RedirectResponse
+	public function reset(ForgotPasswordRequest $request): RedirectResponse
 	{
 		$request->validated();
 		$token = Str::random(64);
@@ -35,7 +35,7 @@ class ResetPasswordController extends Controller
 			'user'    => $user, ]);
 	}
 
-	public function update(UserResetPasswordRequest $request, string $token): RedirectResponse
+	public function update(ResetPasswordRequest $request, string $token): RedirectResponse
 	{
 		$request->validated();
 		$resetPassword = ResetPassword::where('token', $token)->first();

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\AuthRequest;
+use App\Http\Requests\LoginRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Validation\ValidationException;
 
@@ -14,7 +14,7 @@ class AuthController extends Controller
 		return redirect('/login');
 	}
 
-	public function login(AuthRequest $request): RedirectResponse
+	public function login(LoginRequest $request): RedirectResponse
 	{
 		$field = filter_var($request->user, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
 
