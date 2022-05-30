@@ -7,14 +7,14 @@ use App\Models\Info;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
 
-class FetchApi extends Command
+class FetchCountryApi extends Command
 {
 	/**
 	 * The name and signature of the console command.
 	 *
 	 * @var string
 	 */
-	protected $signature = 'api:fetch';
+	protected $signature = 'fetch:country-api';
 
 	/**
 	 * The console command description.
@@ -31,8 +31,7 @@ class FetchApi extends Command
 	public function handle()
 	{
 		$this->info('please wait');
-		$get = Http::get('https://devtest.ge/countries');
-		$countries = json_decode($get, true);
+		$countries = Http::get('https://devtest.ge/countries')->json();
 		foreach ($countries as $country)
 		{
 			$api = new Country();
@@ -40,18 +39,18 @@ class FetchApi extends Command
 			$api['name'] = $country['name'];
 			$api->save();
 
-			$post = Http::post('https://devtest.ge/get-country-statistics', [
+			$statistics = Http::post('https://devtest.ge/get-country-statistics', [
 				'code'    => $country['code'],
 			]);
-			$data = json_decode($post);
+			$statistics = json_decode($statistics);
 			$info = new Info();
-			$info->country = $data->country;
-			$info->code = $data->code;
-			$info->country_id = $data->id;
-			$info->confirmed = $data->confirmed;
-			$info->recovered = $data->recovered;
-			$info->critical = $data->critical;
-			$info->deaths = $data->deaths;
+			$info->country = $statistics->country;
+			$info->code = $statistics->code;
+			$info->country_id = $statistics->id;
+			$info->confirmed = $statistics->confirmed;
+			$info->recovered = $statistics->recovered;
+			$info->critical = $statistics->critical;
+			$info->deaths = $statistics->deaths;
 			$info->save();
 		}
 

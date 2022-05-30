@@ -17,15 +17,15 @@ class Kernel extends ConsoleKernel
 	protected function schedule(Schedule $schedule)
 	{
 		// $schedule->command('inspire')->hourly();
-		$schedule->command('unverified:clear')->weekly()
+		$schedule->command('unverified:clear')->daily()
 		->appendOutputTo('scheduler.log');
-		$schedule->command('verify:token-clear')->weekly()
+		$schedule->command('verify:token-clear')->daily()
 		->appendOutputTo('scheduler.log');
-		$schedule->command('password:token-clear')->weekly()
+		$schedule->command('password:token-clear')->daily()
 		->appendOutputTo('scheduler.log');
 		$schedule->command('migrate:fresh')->weekly()
 			->appendOutputTo('scheduler.log');
-		$schedule->command('api:fetch')->weekly()
+		$schedule->command('fetch:country-api')->weekly()
 			->appendOutputTo('scheduler.log');
 	}
 
