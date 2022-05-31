@@ -19,12 +19,13 @@ class AuthController extends Controller
 		$field = filter_var($request->user, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
 
 		if (!auth()->attempt([
-			$field           => $request->user,
-			'password'       => $request->password,
+			$field                 => $request->user,
+			'password'             => $request->password,
 		], $request->remember))
 		{
 			throw ValidationException::withMessages([
-				'user' => 'your_provided_credentials_could_not_be_verified',
+				'user'         => 'your_provided_credentials_could_not_be_verified',
+				'password'     => 'your_provided_credentials_could_not_be_verified',
 			]);
 		}
 

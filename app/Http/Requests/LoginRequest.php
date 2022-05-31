@@ -24,17 +24,17 @@ class LoginRequest extends FormRequest
 	public function rules()
 	{
 		return [
-			'user'                => 'required|min:3',
-			'password'            => 'required',
+			'user'                      => 'required|min:3',
+			'password'                  => 'required',
 		];
 	}
 
 	public function messages()
 	{
 		return [
-			'user.required'        => 'username_is_required',
-			'user.min'             => 'username_must_contain_at_least_3_symbols',
-			'password.required'    => 'password_is_required',
+			'user.required'              => 'username_is_required',
+			'user.min'                   => 'username_must_contain_at_least_3_symbols',
+			'password.required'          => 'password_is_required',
 		];
 	}
 }

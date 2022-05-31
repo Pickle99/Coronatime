@@ -18,8 +18,8 @@
                                 <label for="username" class="block text-xs mob:text-lg font-bold text-black">{{__('translate.username')}}</label>
                                 <div class="mt-1 group flex items-center">
                                     <input id="username" value="{{old('username')}}" placeholder="{{__('translate.enter_unique_username')}}" name="username" type="text"
-                                           class="{{$errors->has('username') ? 'appearance-none block w-full px-6 py-4 border  border-red-500 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm' : 'appearance-none block w-full px-6 py-4 border  border-green-500 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'}}">
-                                    <div class="{{$errors->has('username') ? 'hidden' : '-ml-10 group-focus-within:hidden'}}">
+                                           class="appearance-none block w-full px-6 py-4 border  @if($errors->has('username')) border-red-500  @elseif(!$errors->has('username') && $errors->any()) border-green-500  @endif rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                    <div class="@if(!$errors->has('username') && $errors->any())-ml-10 group-focus-within:hidden @else  hidden @endif">
                                         <img class="" src="{{asset('/images/ok.png')}}" alt="img">
                                     </div>
                                 </div>
@@ -35,8 +35,8 @@
                             <label for="email" class="block text-xs mob:text-lg font-bold text-black">{{__('translate.email')}}</label>
                             <div class="mt-1 group flex items-center">
                                 <input id="email" value="{{old('email')}}" placeholder="{{__('translate.enter_your_email')}}" name="email" type="email"
-                                       class="{{$errors->has('email') ? 'appearance-none block w-full px-6 py-4 border  border-red-500 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm' : 'appearance-none block w-full px-6 py-4 border  border-green-500 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'}}">
-                                <div class="{{$errors->has('email') ? 'hidden' : '-ml-10 group-focus-within:hidden'}}">
+                                       class="appearance-none block w-full px-6 py-4 border  @if($errors->has('email')) border-red-500  @elseif(!$errors->has('email') && $errors->any()) border-green-500  @endif rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                <div class="@if(!$errors->has('email') && $errors->any())-ml-10 group-focus-within:hidden @else  hidden @endif">
                                     <img class="" src="{{asset('/images/ok.png')}}" alt="img">
                                 </div>
                             </div>
@@ -51,9 +51,9 @@
                         <div class="space-y-1">
                             <label for="password" class="block text-xs mob:text-lg font-bold text-black"> {{__('translate.password')}}</label>
                             <div class="mt-1 group flex items-center">
-                                <input id="password"  placeholder="{{__('translate.fill_in_password')}}" name="password" type="password"
-                                       class="{{$errors->has('password') ? 'appearance-none block w-full px-6 py-4 border  border-red-500 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm' : 'appearance-none block w-full px-6 py-4 border  border-green-500 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'}}">
-                                <div class="{{$errors->has('password') ? 'hidden' : '-ml-10 group-focus-within:hidden'}}">
+                                <input id="password" value="{{old('password')}}"  placeholder="{{__('translate.fill_in_password')}}" name="password" type="password"
+                                       class="appearance-none block w-full px-6 py-4 border  @if($errors->has('password')) border-red-500  @elseif(!$errors->has('password') && $errors->any()) border-green-500  @endif rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                <div class="@if(!$errors->has('password') && $errors->any())-ml-10 group-focus-within:hidden @else  hidden @endif">
                                     <img class="" src="{{asset('/images/ok.png')}}" alt="img">
                                 </div>
                             </div>
@@ -68,9 +68,9 @@
                         <div class="space-y-1">
                             <label for="repeat" class="block text-xs mob:text-lg font-bold text-black"> {{__('translate.repeat_password')}}</label>
                             <div class="mt-1 group flex items-center">
-                                <input id="repeat"  placeholder="{{__('translate.repeat_password')}}" name="repeat" type="password"
-                                       class="{{$errors->has('repeat') ? 'appearance-none block w-full px-6 py-4 border  border-red-500 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm' : 'appearance-none block w-full px-6 py-4 border  border-green-500 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'}}">
-                                <div class="{{$errors->has('repeat') ? 'hidden' : '-ml-10 group-focus-within:hidden'}}">
+                                <input id="repeat" value="{{old('repeat')}}"  placeholder="{{__('translate.repeat_password')}}" name="repeat" type="password"
+                                       class="appearance-none block w-full px-6 py-4 border  @if($errors->has('repeat')) border-red-500  @elseif(!$errors->has('repeat') && $errors->any()) border-green-500  @endif rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                <div class="@if(!$errors->has('repeat') && $errors->any())-ml-10 group-focus-within:hidden @else  hidden @endif">
                                     <img class="" src="{{asset('/images/ok.png')}}" alt="img">
                                 </div>
                             </div>

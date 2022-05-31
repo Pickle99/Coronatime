@@ -18,8 +18,9 @@
                         <div class="mt-1 flex group items-center">
                             <input id="password" placeholder="{{__("translate.enter_new_password")}}" name="password"
                                    type="password"
-                                   class="{{$errors->has('password') ? 'appearance-none block w-full px-6 py-4 border  border-red-500 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm' : 'appearance-none block w-full px-6 py-4 border  border-green-500 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'}}">
-                            <div class="{{$errors->has('password') ? 'hidden' : '-ml-10 group-focus-within:hidden'}}">
+                                   class="appearance-none block w-full px-6 py-4 border  @if($errors->has('password')) border-red-500  @elseif(!$errors->has('password') && $errors->any()) border-green-500  @endif rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+
+                            <div class="@if(!$errors->has('password') && $errors->any())-ml-10 group-focus-within:hidden @else  hidden @endif">
                                 <img class="" src="{{asset('/images/ok.png')}}" alt="img">
                             </div>
                         </div>
@@ -35,10 +36,8 @@
                         <div class="mt-1 group flex items-center">
                             <input id="passwords" placeholder="{{__("translate.repeat_password")}}" name="password_confirmation"
                                    type="password"
-                                   class="{{$errors->has('password_confirmation') ? 'appearance-none block w-full px-6 py-4 border  border-red-500 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm' : 'appearance-none block w-full px-6 py-4 border  border-green-500 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'}}">
-                            <div class="{{$errors->has('password_confirmation') ? 'hidden' : '-ml-10 group-focus-within:hidden'}}">
-                                <img class="" src="{{asset('/images/ok.png')}}" alt="img">
-                            </div>
+                                   class="appearance-none block w-full px-6 py-4 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+
                         </div>
                     </div>
                   <x-submit-button class="mt-80 lg:mt-20 mb-10 mob:mb-0 lg:mt-1">{{__("translate.save")}}</x-submit-button>

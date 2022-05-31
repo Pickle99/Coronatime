@@ -16,8 +16,8 @@
                         <div class="mt-1 group flex items-center">
                             <input id="email" placeholder="{{__("translate.email")}}" name="email"
                                    type="email"
-                                  class="{{$errors->has('email') ? 'appearance-none block w-full px-6 py-4 border  border-red-500 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm' : 'appearance-none block w-full px-6 py-4 border  border-green-500 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'}}">
-                            <div class="{{$errors->has('email') ? 'hidden' : '-ml-10 group-focus-within:hidden'}}">
+                                   class="appearance-none block w-full px-6 py-4 border  @if($errors->has('email')) border-red-500  @elseif(!$errors->has('email') && $errors->any()) border-green-500  @endif rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                            <div class="@if(!$errors->has('email') && $errors->any())-ml-10 group-focus-within:hidden @else  hidden @endif">
                                 <img class="" src="{{asset('/images/ok.png')}}" alt="img">
                             </div>
                         </div>
