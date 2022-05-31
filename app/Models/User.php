@@ -42,9 +42,9 @@ class User extends Authenticatable implements MustVerifyEmail
 		'email_verified_at' => 'datetime',
 	];
 
-	public function verifyUser()
+	public function verifiedUser()
 	{
-		return $this->hasOne(VerifyUser::class);
+		return $this->hasOne(VerifiedUser::class);
 	}
 
 	public function resetPassword()

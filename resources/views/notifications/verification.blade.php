@@ -19,7 +19,7 @@
         border-radius: 8px;
          background: #0FBA68; padding: 20px 90px">  <a style="text-decoration:none;
          color:#ffffff;
-         font-size:15px;" href="{{url('/user/verify/' . $user->verifyUser->token)}}">VERIFY EMAIL</a></span></div>
+         font-size:15px;" href="{{url('/user/verify/' . $user->verifiedUser->token)}}">VERIFY EMAIL</a></span></div>
 
 </div>
 </body>

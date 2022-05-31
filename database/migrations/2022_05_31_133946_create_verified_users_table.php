@@ -12,7 +12,7 @@ return new class extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('verify_users', function (Blueprint $table) {
+		Schema::create('verified_users', function (Blueprint $table) {
 			$table->id();
 			$table->string('token');
 			$table->unsignedBigInteger('user_id');
@@ -27,6 +27,6 @@ return new class extends Migration {
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('verify_users');
+		Schema::dropIfExists('verified_users');
 	}
 };

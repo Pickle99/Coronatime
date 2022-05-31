@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\RegisterRequest;
 use App\Mail\VerifyEmail;
 use App\Models\User;
-use App\Models\VerifyUser;
+use App\Models\VerifiedUser;
 use Carbon\Carbon;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Mail;
@@ -28,7 +28,7 @@ class RegisterController extends Controller
 		$validated = $request->validated();
 		$validated['password'] = bcrypt($validated['password']);
 		$user = User::create($validated);
-		VerifyUser::create([
+		VerifiedUser::create([
 			'token'   => Str::random(60),
 			'user_id' => $user->id,
 		]);
@@ -39,7 +39,7 @@ class RegisterController extends Controller
 
 	public function verifyEmail(string $token): RedirectResponse
 	{
-		$verifiedUser = VerifyUser::where('token', $token)->first();
+		$verifiedUser = VerifiedUser::where('token', $token)->first();
 		if (isset($verifiedUser))
 		{
 			$user = $verifiedUser->user;
@@ -48,7 +48,7 @@ class RegisterController extends Controller
 				$user->email_verified_at = Carbon::now();
 				$user->save();
 				auth()->logout();
-				return redirect('/verification/success/' . $user->verifyUser->token);
+				return redirect('/verification/success/' . $user->verifiedUser->token);
 			}
 			return redirect('/login');
 		}
