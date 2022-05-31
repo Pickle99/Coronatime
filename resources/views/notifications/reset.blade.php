@@ -16,11 +16,12 @@
          font-size: 18px;
          margin-bottom:40px;
          color: darkgray;">click this button to recover a password</p>
-        <span style="
+        <a href="{{url('/reset/password/' . $resetPassword->token . '=' .$resetPassword->email)}}" style="
         border-radius: 8px;
-         background: #0FBA68; padding: 20px 90px">  <a style="text-decoration:none;
+         background: #0FBA68; padding: 20px 90px; text-decoration:none;
          color:#ffffff;
-         font-size:15px;" href="{{url('/reset/password/' . $resetPassword->token . '=' .$resetPassword->email)}}">RECOVER PASSWORD</a></span></div>
-
+         font-size:15px;
+         ">RECOVER PASSWORD</a>
+    </div>
 </div>
 </body>

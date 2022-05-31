@@ -15,11 +15,12 @@
          font-size: 18px;
          margin-bottom:40px;
          color: darkgray;">click this button to verify your email</p>
-        <span style="
+        <a href="{{url('/user/verify/' . $user->verifiedUser->token)}}" style="
         border-radius: 8px;
-         background: #0FBA68; padding: 20px 90px">  <a style="text-decoration:none;
+         background: #0FBA68; padding: 20px 90px; text-decoration:none;
          color:#ffffff;
-         font-size:15px;" href="{{url('/user/verify/' . $user->verifiedUser->token)}}">VERIFY EMAIL</a></span></div>
-
+         font-size:15px;
+         ">VERIFY EMAIL</a>
+    </div>
 </div>
 </body>
