@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Contracts\Database\Query\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 use Spatie\Translatable\HasTranslations;
 
 class Country extends Model
@@ -19,8 +20,7 @@ class Country extends Model
 
 	public function scopeFilter($query, array $filters): Builder
 	{
-		return $query->when($filters['search'] ?? false, fn ($query, $search) => $query
-		->where('name', 'like', '%' . $search . '%'));
+		return $query->when($filters['search'] ?? false, fn ($query, $search) => $query->where(DB::raw('lower(name)'), 'like', '%' . strtolower($search) . '%'));
 	}
 
 	public function infos()
