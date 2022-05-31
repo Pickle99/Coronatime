@@ -13,7 +13,7 @@
 
                <div class="mt-8">
                    <div class="mt-6">
-                       <form method="POST"  action="/login" class="space-y-6" id="form">
+                       <form method="POST"  action="{{route('login')}}" class="space-y-6" id="form">
                            @csrf
                            <div>
                                <label for="user" class="block text-lg lg:text-sm font-bold text-black">{{__('translate.username')}}</label>

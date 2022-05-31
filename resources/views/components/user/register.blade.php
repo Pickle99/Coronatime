@@ -12,7 +12,7 @@
 
             <div class="mob:mt-8">
                 <div class=" mob:mt-6 mb-0 lg:mb-10">
-                    <form method="POST" action="/register" class="space-y-6">
+                    <form method="POST" action="{{route('register.store')}}" class="space-y-6">
                         @csrf
                             <div>
                                 <label for="username" class="block text-xs mob:text-lg font-bold text-black">{{__('translate.username')}}</label>

@@ -9,7 +9,7 @@
 
         <div class="mt-8">
             <div class="mt-6">
-                <form action="/forgot/password" method="POST" class="space-y-6">
+                <form action="{{route('password.email')}}" method="POST" class="space-y-6">
                     @csrf
                     <div>
                         <label for="email" class="block text-lg lg:text-sm font-bold text-black"> {{__("translate.email")}} </label>

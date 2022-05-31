@@ -10,7 +10,7 @@
               <div class="absolute top-16 right-4 hidden group-hover:block">
                   <a class="lg:ml-10 font-extrabold text-black">{{auth()->user()->username}}</a>
                  <div class="items-center">
-                 <form method="POST" action="/logout">
+                 <form method="POST" action="{{route('logout')}}">
                      @csrf
                      <button class="text-sm " type="submit"> {{__('translate.logout')}}</button>
                  </form>
