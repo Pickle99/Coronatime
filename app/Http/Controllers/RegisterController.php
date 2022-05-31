@@ -17,10 +17,10 @@ class RegisterController extends Controller
 	{
 		if (auth()->user())
 		{
-			return redirect('/dashboard');
+			return redirect()->route('dashboard');
 		}
 
-		return redirect('/login');
+		return redirect()->route('login.view');
 	}
 
 	public function createUser(RegisterRequest $request): RedirectResponse
@@ -34,7 +34,7 @@ class RegisterController extends Controller
 		]);
 		auth()->login($user);
 		Mail::to($user->email)->send(new VerifyEmail($user));
-		return redirect('/dashboard');
+		return redirect()->route('dashboard');
 	}
 
 	public function verifyEmail(string $token): RedirectResponse
@@ -50,9 +50,9 @@ class RegisterController extends Controller
 				auth()->logout();
 				return redirect('/verification/success/' . $user->verifiedUser->token);
 			}
-			return redirect('/login');
+			return redirect()->route('login.view');
 		}
 
-		return redirect('/login');
+		return redirect()->route('login.view');
 	}
 }

@@ -45,6 +45,6 @@ class ResetPasswordController extends Controller
 			'password' => bcrypt($request->password),
 		]);
 		$resetPassword->delete();
-		return redirect('/forgot/password/sent');
+		return redirect()->route('reset.success');
 	}
 }

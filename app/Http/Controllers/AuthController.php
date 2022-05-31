@@ -11,7 +11,7 @@ class AuthController extends Controller
 	public function logout(): RedirectResponse
 	{
 		auth()->logout();
-		return redirect('/login');
+		return redirect()->route('login.view');
 	}
 
 	public function login(LoginRequest $request): RedirectResponse
@@ -31,6 +31,6 @@ class AuthController extends Controller
 
 		session()->regenerate();
 
-		return redirect('/dashboard');
+		return redirect()->route('dashboard');
 	}
 }
