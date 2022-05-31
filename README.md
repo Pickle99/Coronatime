@@ -71,10 +71,7 @@ DB_USERNAME=*****
 
 DB_PASSWORD=*****
 ______
-<p>after setting up .env file, execute</p>
-<code> php artisan config:cache </code>
-<p>in order to cache environment variables</p>
-<p>4. Now execute in the root of your project following:</p>
+<p> Now execute in the root of your project following:</p>
 <code> php artisan key:generate</code>
 <p>Which generates auth key.</p>
 <h5>Now you should be good to go!</h5>
