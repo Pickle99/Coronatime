@@ -12,7 +12,7 @@ class ClearVerifyToken extends Command
 	 *
 	 * @var string
 	 */
-	protected $signature = 'verify:token-clear';
+	protected $signature = 'clear:verify-token';
 
 	/**
 	 * The console command description.

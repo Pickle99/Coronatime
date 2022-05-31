@@ -12,7 +12,7 @@ class ClearUnverifiedUsers extends Command
 	 *
 	 * @var string
 	 */
-	protected $signature = 'unverified:clear';
+	protected $signature = 'clear:unverified-users';
 
 	/**
 	 * The console command description.
