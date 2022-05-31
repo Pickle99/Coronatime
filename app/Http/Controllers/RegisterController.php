@@ -48,7 +48,7 @@ class RegisterController extends Controller
 				$user->email_verified_at = Carbon::now();
 				$user->save();
 				auth()->logout();
-				return redirect('/verification/success/' . $user->verifiedUser->token);
+				return redirect()->route('verify.success', ['token' => $user->verifiedUser->token]);
 			}
 			return redirect()->route('login.view');
 		}

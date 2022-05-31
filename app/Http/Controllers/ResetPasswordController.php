@@ -24,7 +24,7 @@ class ResetPasswordController extends Controller
 			'token'      => $token,
 		]);
 		Mail::to($request->email)->send(new PasswordReset($resetPassword));
-		return redirect('password/' . $token . '/reset');
+		return redirect()->route('password.sent', ['token' => $token]);
 	}
 
 	public function editPassword(string $token, string $user): View
