@@ -37,6 +37,7 @@ return [
 	'username_already_exists'                                                                                 => 'Username already exists',
 	'email_already_exists'                                                                                    => 'Email already exists',
 	'confirmation'                                                                                            => 'We have sent you a confirmation email',
+	'reset_email'                                                                                             => 'We have sent you a reset password email',
 	'save'                                                                                                    => 'SAVE CHANGES',
 	'new_password'                                                                                            => 'New password',
 	'enter_new_password'                                                                                      => 'Enter new password',
