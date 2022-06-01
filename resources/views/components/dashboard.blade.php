@@ -20,7 +20,7 @@
            <div class="lg:mx-4 border-r-4"></div>
 
              <div class="mt-4 items-center hidden lg:block">
-                 <form method="POST" action="/logout">
+                 <form method="POST" action="{{route('logout')}}">
                      @csrf
                      <button class="mr-4 lg:mr-52 text-sm " type="submit"> {{__('translate.logout')}}</button>
                  </form>
