@@ -17,7 +17,7 @@ class StatisticsController extends Controller
 		$sortBy = $request->sortBy ?? 'created_at';
 		$sortDirection = $request->sortDirection === 'asc' ? 'asc' : 'desc';
 		$countries = Country::orderBy(Statistic::select($sortBy)->whereColumn('statistics.country_id', 'countries.id'), $sortDirection)
-			->latest()->filter(request(['search']))->get();
+			->filter(request(['search']))->get();
 
 		return view('components.dashboard', [
 			'page'          => request('page'),
