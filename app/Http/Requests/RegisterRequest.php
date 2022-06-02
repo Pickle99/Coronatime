@@ -34,15 +34,15 @@ class RegisterRequest extends FormRequest
 	public function messages()
 	{
 		return [
-			'username.required'         => 'username_is_required',
-			'username.min'              => 'username_must_contain_at_least_3_symbols',
-			'username.unique'           => 'username_already_exists',
-			'email.required'            => 'email_is_required',
-			'email.unique'              => 'email_already_exists',
-			'password.required'         => 'password_is_required',
-			'password.min'              => 'password_must_contain_at_least_3_symbols',
-			'repeat.same'               => 'passwords_dont_match',
-			'repeat.required'           => 'repeat_password_is_required',
+			'username.required'         => 'Username is required',
+			'username.min'              => 'Username must contain at least 3 symbols',
+			'username.unique'           => 'Username already exists',
+			'email.required'            => 'Email is required',
+			'email.unique'              => 'Email already exists',
+			'password.required'         => 'Password is required',
+			'password.min'              => 'Password must contain at least 3 symbols',
+			'repeat.same'               => 'Passwords dont match',
+			'repeat.required'           => 'Repeat password is required',
 		];
 	}
 }

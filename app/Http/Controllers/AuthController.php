@@ -24,8 +24,8 @@ class AuthController extends Controller
 		], $request->remember))
 		{
 			throw ValidationException::withMessages([
-				'user'         => 'your_provided_credentials_could_not_be_verified',
-				'password'     => 'your_provided_credentials_could_not_be_verified',
+				'user'         => 'Your provided credentials could not be verified',
+				'password'     => 'Your provided credentials could not be verified',
 			]);
 		}
 

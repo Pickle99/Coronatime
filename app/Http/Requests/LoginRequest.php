@@ -32,9 +32,9 @@ class LoginRequest extends FormRequest
 	public function messages()
 	{
 		return [
-			'user.required'              => 'username_is_required',
-			'user.min'                   => 'username_must_contain_at_least_3_symbols',
-			'password.required'          => 'password_is_required',
+			'user.required'              => 'Username is required',
+			'user.min'                   => 'Username must contain at least 3 symbols',
+			'password.required'          => 'Password is required',
 		];
 	}
 }

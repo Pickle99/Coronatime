@@ -27,7 +27,7 @@
                                @error("user")
                              <div class="flex items-center">
                                  <img class="flex mr-2" src="{{asset('images/err.png')}}" alt="img"/>
-                                 <p class="text-red-500 text-lg mt-1">{{__("translate.$message")}}</p>
+                                 <p class="text-red-500 text-lg mt-1">{{$message}}</p>
                              </div>
                                @enderror
                            </div>
@@ -45,7 +45,7 @@ class="appearance-none block w-full px-6 py-4 border @if($errors->has('password'
                                @error('password')
                                <div class="flex items-center">
                                    <img class="flex mr-2" src="{{asset('images/err.png')}}" alt="img"/>
-                                   <p class="text-red-500 text-lg mt-1">{{__("translate.$message")}}</p>
+                                   <p class="text-red-500 text-lg mt-1">{{$message}}</p>
                                </div>
                                @enderror
                            </div>
