@@ -7,14 +7,14 @@ use App\Models\Info;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
 
-class FetchCountryApi extends Command
+class FetchCountry extends Command
 {
 	/**
 	 * The name and signature of the console command.
 	 *
 	 * @var string
 	 */
-	protected $signature = 'fetch:country-api';
+	protected $signature = 'fetch:country';
 
 	/**
 	 * The console command description.

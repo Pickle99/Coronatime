@@ -25,7 +25,7 @@ class Kernel extends ConsoleKernel
 		->appendOutputTo('scheduler.log');
 		$schedule->command('migrate:fresh')->weekly()
 			->appendOutputTo('scheduler.log');
-		$schedule->command('fetch:country-api')->weekly()
+		$schedule->command('fetch:country')->weekly()
 			->appendOutputTo('scheduler.log');
 	}
 
