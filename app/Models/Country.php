@@ -25,6 +25,6 @@ class Country extends Model
 
 	public function infos()
 	{
-		return $this->hasOne(Info::class);
+		return $this->hasOne(Statistic::class);
 	}
 }

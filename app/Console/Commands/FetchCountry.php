@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\Country;
-use App\Models\Info;
+use App\Models\Statistic;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
 
@@ -43,7 +43,7 @@ class FetchCountry extends Command
 				'code'    => $country['code'],
 			]);
 			$statistics = json_decode($statistics);
-			$info = new Info();
+			$info = new Statistic();
 			$info->country = $statistics->country;
 			$info->code = $statistics->code;
 			$info->country_id = $statistics->id;
