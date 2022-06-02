@@ -34,24 +34,26 @@ class FetchCountry extends Command
 		$countries = Http::get('https://devtest.ge/countries')->json();
 		foreach ($countries as $country)
 		{
-			$api = new Country();
-			$api['code'] = $country['code'];
-			$api['name'] = $country['name'];
-			$api->save();
-
+			Country::create(
+				[
+					'code' => $country['code'],
+					'name' => $country['name'],
+				]
+			);
 			$statistics = Http::post('https://devtest.ge/get-country-statistics', [
 				'code'    => $country['code'],
-			]);
-			$statistics = json_decode($statistics);
-			$info = new Statistic();
-			$info->country = $statistics->country;
-			$info->code = $statistics->code;
-			$info->country_id = $statistics->id;
-			$info->confirmed = $statistics->confirmed;
-			$info->recovered = $statistics->recovered;
-			$info->critical = $statistics->critical;
-			$info->deaths = $statistics->deaths;
-			$info->save();
+			])->json();
+			Statistic::create(
+				[
+					'country'    => $statistics['country'],
+					'code'       => $statistics['code'],
+					'country_id' => $statistics['id'],
+					'confirmed'  => $statistics['confirmed'],
+					'recovered'  => $statistics['recovered'],
+					'critical'   => $statistics['critical'],
+					'deaths'     => $statistics['deaths'],
+				]
+			);
 		}
 
 		$this->info('success');
