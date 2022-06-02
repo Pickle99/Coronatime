@@ -86,7 +86,7 @@
                     </form>
                     <p class="mt-2 text-center text-sm text-gray-400">
                         {{__('translate.already_have_an_account')}}
-                        <a href="/login" class="font-medium text-black hover:text-indigo-500">{{__('translate.log_in')}} </a>
+                        <a href="{{route('login.view')}}" class="font-medium text-black hover:text-indigo-500">{{__('translate.log_in')}} </a>
                     </p>
                 </div>
             </div>

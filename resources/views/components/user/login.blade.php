@@ -57,7 +57,7 @@ class="appearance-none block w-full px-6 py-4 border @if($errors->has('password'
                                </div>
 
                                <div class="text-sm">
-                                   <a href="/forgot/password" class="font-medium text-indigo-600 hover:text-indigo-500">{{__('translate.forgot_your_password')}}</a>
+                                   <a href="{{route('password.view')}}" class="font-medium text-indigo-600 hover:text-indigo-500">{{__('translate.forgot_your_password')}}</a>
                                </div>
                            </div>
 
@@ -65,7 +65,7 @@ class="appearance-none block w-full px-6 py-4 border @if($errors->has('password'
                        </form>
                        <p class="mt-2 text-center text-sm text-gray-400">
                            {{__("translate.dont_have_an_account")}}
-                           <a href="/register" class=" ml-2 font-medium text-black hover:text-indigo-500"> {{__('translate.sign_up_for_free')}} </a>
+                           <a href="{{route('register.view')}}" class=" ml-2 font-medium text-black hover:text-indigo-500"> {{__('translate.sign_up_for_free')}} </a>
                        </p>
                    </div>
                </div>

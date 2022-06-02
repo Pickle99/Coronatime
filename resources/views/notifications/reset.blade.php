@@ -16,7 +16,7 @@
          font-size: 18px;
          margin-bottom:40px;
          color: darkgray;">click this button to recover a password</p>
-        <a href="{{url('/reset/password/' . $resetPassword->token . '=' .$resetPassword->email)}}" style="
+        <a href="{{route('password.reset', ['token' => $resetPassword->token, 'email' => $resetPassword->email])}}" style="
         border-radius: 8px;
          background: #0FBA68; padding: 20px 90px; text-decoration:none;
          color:#ffffff;
