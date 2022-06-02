@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\RegisterRequest;
 use App\Mail\VerifyEmail;
 use App\Models\User;
-use App\Models\VerifiedUser;
 use Carbon\Carbon;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Mail;
@@ -19,10 +18,6 @@ class RegisterController extends Controller
 		$validated['password'] = bcrypt($validated['password']);
 		$validated['token'] = Str::random(60);
 		$user = User::create($validated);
-//		VerifiedUser::create([
-//			'token'   => Str::random(60),
-//			'user_id' => $user->id,
-//		]);
 		auth()->login($user);
 		Mail::to($user->email)->send(new VerifyEmail($user));
 		return redirect()->route('dashboard');
