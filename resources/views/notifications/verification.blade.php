@@ -15,7 +15,7 @@
          font-size: 18px;
          margin-bottom:40px;
          color: darkgray;">click this button to verify your email</p>
-        <a href="{{route('user.verify', ['token' => $user->verifiedUser->token])}}" style="
+        <a href="{{route('user.verify', ['token' => $user->token])}}" style="
         border-radius: 8px;
          background: #0FBA68; padding: 20px 90px; text-decoration:none;
          color:#ffffff;

@@ -17,11 +17,12 @@ class RegisterController extends Controller
 	{
 		$validated = $request->validated();
 		$validated['password'] = bcrypt($validated['password']);
+		$validated['token'] = Str::random(60);
 		$user = User::create($validated);
-		VerifiedUser::create([
-			'token'   => Str::random(60),
-			'user_id' => $user->id,
-		]);
+//		VerifiedUser::create([
+//			'token'   => Str::random(60),
+//			'user_id' => $user->id,
+//		]);
 		auth()->login($user);
 		Mail::to($user->email)->send(new VerifyEmail($user));
 		return redirect()->route('dashboard');
@@ -29,16 +30,15 @@ class RegisterController extends Controller
 
 	public function verifyEmail(string $token): RedirectResponse
 	{
-		$verifiedUser = VerifiedUser::where('token', $token)->first();
-		if (isset($verifiedUser))
+		$user = User::where('token', $token)->first();
+		if (isset($user))
 		{
-			$user = $verifiedUser->user;
 			if (!$user->email_verified_at)
 			{
 				$user->email_verified_at = Carbon::now();
 				$user->save();
 				auth()->logout();
-				return redirect()->route('verify.success', ['token' => $user->verifiedUser->token]);
+				return redirect()->route('verify.success', ['token' => $user->token]);
 			}
 			return redirect()->route('login.view');
 		}
