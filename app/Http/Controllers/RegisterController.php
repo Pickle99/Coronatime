@@ -13,16 +13,6 @@ use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
-	public function home(): RedirectResponse
-	{
-		if (auth()->user())
-		{
-			return redirect()->route('dashboard');
-		}
-
-		return redirect()->route('login.view');
-	}
-
 	public function createUser(RegisterRequest $request): RedirectResponse
 	{
 		$validated = $request->validated();
