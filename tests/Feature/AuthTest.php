@@ -33,7 +33,7 @@ class AuthTest extends TestCase
 		);
 	}
 
-	public function test_auth_should_give_us_email_error_if_we_wont_provide_email_input()
+	public function test_auth_should_give_us_user_error_if_we_wont_provide_user_input()
 	{
 		$response = $this->post('/login', [
 			'password' => 'my-so-secret-password',
@@ -75,24 +75,21 @@ class AuthTest extends TestCase
 
 	public function test_auth_should_redirect_to_dashboard_page_after_successful_login()
 	{
-		$username = 'userrrr';
-		$email = 'babakafa@gmail.com';
-		$password = '231212';
+		$email = 'admin@gmail.com';
+		$password = '11111';
 
 		User::factory()->create(
 			[
-				'username'              => $email,
-				'name'                  => $username,
-				'email'                 => $email,
-				'password'              => bcrypt($password),
+				'email'             => $email,
+				'password'          => bcrypt($password),
 			]
 		);
 
 		$response = $this->post('/login', [
-			'user'        => $email,
-			'password'    => $password,
+			'user'         => $email,
+			'password'     => $password,
 		]);
 
-		$response->assertRedirect('/email-verify');
+		$response->assertRedirect('/dashboard');
 	}
 }
