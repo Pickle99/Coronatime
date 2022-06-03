@@ -14,9 +14,8 @@ return new class extends Migration {
 	{
 		Schema::create('statistics', function (Blueprint $table) {
 			$table->bigIncrements('id');
-			$table->string('country');
+			$table->json('country');
 			$table->string('code');
-			$table->foreignId('country_id')->constrained()->cascadeOnDelete();
 			$table->bigInteger('confirmed');
 			$table->bigInteger('recovered');
 			$table->bigInteger('critical');

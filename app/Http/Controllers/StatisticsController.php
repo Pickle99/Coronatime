@@ -21,21 +21,22 @@ class StatisticsController extends Controller
 	}
 
 	/**
-	Show country statistics
+	 * Show country statistics
 	 */
 	public function index(Request $request): View
 	{
 		$sortBy = $request->sortBy ?? 'created_at';
 		$sortDirection = $request->sortDirection === 'asc' ? 'asc' : 'desc';
-		$countries = Country::orderBy(Statistic::select($sortBy)->whereColumn('statistics.country_id', 'countries.id'), $sortDirection)
+		$sortBy = $sortBy === 'country' ? 'country->en' : "statistics.$sortBy";
+		$statistics = Statistic::orderBy($sortBy, $sortDirection)
 			->filter($request->toArray('search'))->get();
 		return view('components.dashboard', [
-			'page'          => request('page'),
-			'countries'     => $countries,
-			'infos'         => Statistic::all(),
-			'confirmed'     => Statistic::sum('confirmed'),
-			'recovered'     => Statistic::sum('recovered'),
-			'deaths'        => Statistic::sum('deaths'),
+			'page'           => request('page'),
+			'statistics'     => $statistics,
+			'infos'          => Statistic::all(),
+			'confirmed'      => Statistic::sum('confirmed'),
+			'recovered'      => Statistic::sum('recovered'),
+			'deaths'         => Statistic::sum('deaths'),
 		]);
 	}
 }

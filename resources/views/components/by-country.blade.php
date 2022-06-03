@@ -63,7 +63,6 @@
                                     </div>
                     </span>
                                 </span>
-
                             </th>
                         </tr>
                         </thead>
@@ -74,12 +73,12 @@
                             <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{$deaths}}</td>
                             <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{$recovered}}</td>
                         </tr>
-                        @foreach($countries as $country)
+                        @foreach($statistics as $statistic)
                             <tr>
-                                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{$country->name}}</td>
-                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{number_format($country->infos->confirmed)}}</td>
-                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{number_format($country->infos->deaths)}}</td>
-                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{number_format($country->infos->recovered)}}</td>
+                                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{$statistic->country}}</td>
+                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{number_format($statistic->confirmed)}}</td>
+                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{number_format($statistic->deaths)}}</td>
+                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{number_format($statistic->recovered)}}</td>
                             </tr>
                         @endforeach
                         </tbody>
