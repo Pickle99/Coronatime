@@ -8,12 +8,6 @@ use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
-	public function logout(): RedirectResponse
-	{
-		auth()->logout();
-		return redirect()->route('login.view');
-	}
-
 	public function login(LoginRequest $request): RedirectResponse
 	{
 		$field = filter_var($request->user, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';

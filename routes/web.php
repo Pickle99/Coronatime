@@ -39,7 +39,7 @@ Route::middleware('guest')->group(function () {
 
 Route::get('dashboard', [StatisticsController::class, 'index'])->name('dashboard')->middleware(['auth', 'verified']);
 
-Route::post('logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
+Route::post('logout', [StatisticsController::class, 'logout'])->name('logout')->middleware('auth');
 
 Route::view('email-verify', 'components.user.confirmation-email')->name('verification.notice')->middleware('auth');
 

@@ -10,6 +10,12 @@ use Illuminate\View\View;
 
 class StatisticsController extends Controller
 {
+	public function logout(): RedirectResponse
+	{
+		auth()->logout();
+		return redirect()->route('login.view');
+	}
+
 	public function home(): RedirectResponse
 	{
 		if (auth()->user())
