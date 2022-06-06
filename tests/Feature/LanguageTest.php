@@ -11,14 +11,14 @@ class LanguageTest extends TestCase
 
 	public function test_language_can_change_to_english()
 	{
-		$response = $this->get('language/en');
+		$response = $this->get(route('language', ['locale' => 'en']));
 
 		$response->assertSessionHas('locale', 'en');
 	}
 
 	public function test_language_can_change_to_georgian()
 	{
-		$response = $this->get('language/ka');
+		$response = $this->get(route('language', ['locale' => 'ka']));
 
 		$response->assertSessionHas('locale', 'ka');
 	}

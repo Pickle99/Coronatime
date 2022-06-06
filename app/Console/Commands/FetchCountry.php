@@ -36,11 +36,11 @@ class FetchCountry extends Command
 			$statistics = Http::post('https://devtest.ge/get-country-statistics', [
 				'code'    => $country['code'],
 			])->json();
-			Statistic::create(
+			Statistic::updateOrCreate(
+				['code' => $country['code']],
 				[
 					'country'    => $country['name'],
 					'code'       => $statistics['code'],
-					'country_id' => $statistics['id'],
 					'confirmed'  => $statistics['confirmed'],
 					'recovered'  => $statistics['recovered'],
 					'critical'   => $statistics['critical'],

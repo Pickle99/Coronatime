@@ -8,23 +8,18 @@ use Tests\TestCase;
 
 class AuthTest extends TestCase
 {
-	/*
-	 * A basic feature test example.
-	 *
-	 * @return void
-	 */
 	use RefreshDatabase;
 
 	public function test_login_page_is_accessible()
 	{
-		$response = $this->get('/login');
+		$response = $this->get(route('login.view'));
 		$response->assertSuccessful();
 		$response->assertViewIs('components.user.login');
 	}
 
 	public function test_auth_should_give_us_errors_if_input_is_not_provided()
 	{
-		$response = $this->post('/login');
+		$response = $this->post(route('login'));
 		$response->assertSessionHasErrors(
 			[
 				'user',
@@ -35,7 +30,7 @@ class AuthTest extends TestCase
 
 	public function test_auth_should_give_us_user_error_if_we_wont_provide_user_input()
 	{
-		$response = $this->post('/login', [
+		$response = $this->post(route('login'), [
 			'password' => 'my-so-secret-password',
 		]);
 
@@ -49,7 +44,7 @@ class AuthTest extends TestCase
 
 	public function test_auth_should_give_us_password_error_if_we_wont_provide_password_input()
 	{
-		$response = $this->post('/login', [
+		$response = $this->post(route('login'), [
 			'user' => 'gela@redberry.ge',
 		]);
 
@@ -63,7 +58,7 @@ class AuthTest extends TestCase
 
 	public function test_auth_should_give_us_incorrect_credentials_error_when_such_user_does_not_exists()
 	{
-		$response = $this->post('/login', [
+		$response = $this->post(route('login'), [
 			'user'     => 'giuna@redberry.ge',
 			'password' => 'password',
 		]);
@@ -90,6 +85,6 @@ class AuthTest extends TestCase
 			'password'     => $password,
 		]);
 
-		$response->assertRedirect('/dashboard');
+		$response->assertRedirect(route('dashboard'));
 	}
 }

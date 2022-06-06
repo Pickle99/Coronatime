@@ -16,7 +16,7 @@ class ResetPasswordController extends Controller
 {
 	public function resetPassword(ForgotPasswordRequest $request): RedirectResponse
 	{
-		$token = Str::random(64);
+		$token = Str::random(60);
 		$user = User::where('email', $request->email)->first();
 		$resetPassword = ResetPassword::create([
 			'user_id'    => $user->id,

@@ -31,8 +31,8 @@ Route::middleware('guest')->group(function () {
 
 	Route::view('forgot-password', 'components.user.forgot-password')->name('password.view');
 	Route::post('forgot-password', [ResetPasswordController::class, 'resetPassword'])->name('password.email');
-	Route::view('reset-password/token', 'components.user.reset-password-email')->name('password.sent');
-	Route::get('reset-password/{token}={email}', [ResetPasswordController::class, 'editPassword'])->name('password.reset');
+	Route::view('reset-password/{token}', 'components.user.reset-password-email')->name('password.sent');
+	Route::get('reset-password/{token}/{email}', [ResetPasswordController::class, 'editPassword'])->name('password.reset');
 	Route::post('reset-password/{token}', [ResetPasswordController::class, 'updatePassword'])->name('password.update');
 	Route::view('forgot-password-sent', 'components.user.reset-success')->name('reset.success');
 });

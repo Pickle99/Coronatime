@@ -2,15 +2,14 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\DatabaseMigrations;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Str;
 use Tests\TestCase;
 
 class RegisterTest extends TestCase
 {
 	use RefreshDatabase;
-
-	use DatabaseMigrations;
 
 	public function test_register_page_is_accessible()
 	{
@@ -32,7 +31,7 @@ class RegisterTest extends TestCase
 		);
 	}
 
-	public function test_register_should_give_us_user_error_if_we_wont_provide_only_password_input()
+	public function test_register_should_give_us_username_email_and_repeat_password_error_if_we_provide_only_password_input()
 	{
 		$response = $this->post(route('register.store'), [
 			'password' => 'my-so-secret-password',
@@ -48,7 +47,7 @@ class RegisterTest extends TestCase
 		$response->assertSessionDoesntHaveErrors(['password']);
 	}
 
-	public function test_register_should_give_us_password_error_if_we_provide_only_email_input()
+	public function test_register_should_give_us_username_password_and_repeat_password_errors_if_we_provide_only_email_input()
 	{
 		$response = $this->post(route('register.store'), [
 			'email' => 'gela@redberry.ge',
@@ -64,17 +63,55 @@ class RegisterTest extends TestCase
 		$response->assertSessionDoesntHaveErrors(['email']);
 	}
 
-//	public function test_after_successful_registration_user_should_be_added_to_database()
-//	{
-//		$user = [
-//			'username'                  => 'babakaka',
-//			'email'                     => 'testemail@test.com',
-//			'password'                  => 'passwordtest',
-//			'repeat'                    => 'passwordtest',
-//		];
-//
-//		$this->post(route('register.store'), $user);
-//
-//		$this->assertDatabaseHas('users', $user);
-//	}
+	public function test_register_should_give_us_email_password_and_repeat_password_errors_if_we_provide_only_username_input()
+	{
+		$response = $this->post(route('register.store'), [
+			'username' => 'gela',
+		]);
+
+		$response->assertSessionHasErrors(
+			[
+				'email',
+				'password',
+				'repeat',
+			]
+		);
+		$response->assertSessionDoesntHaveErrors(['username']);
+	}
+
+	public function test_user_can_register()
+	{
+		$user = [
+			'username'                  => 'JoeRa',
+			'email'                     => 'testemail@test.com',
+			'password'                  => 'passwordtest',
+			'repeat'                    => 'passwordtest',
+		];
+
+		$this->post('/register', $user);
+
+		$this->assertDatabaseHas('users', ['email' => $user['email']]);
+	}
+
+	public function test_user_can_verify_email()
+	{
+		$user = User::factory()->create([
+			'email_verified_at' => null,
+		]);
+
+		$this->actingAs($user);
+
+		$this->get(route('user.verify', ['token' => $user->token]))->assertRedirect(route('verify.success', ['token' => $user->token]));
+	}
+
+	public function test_user_should_redirect_to_login_page_if_user_dont_exist_verified()
+	{
+		$this->get(route('user.verify', ['token' => Str::random(60)]))->assertRedirect(route('login.view'));
+	}
+
+	public function test_user_should_redirect_to_login_page_if_user_already_verified()
+	{
+		$user = User::factory()->create();
+		$this->get(route('user.verify', ['token' => $user->token]))->assertRedirect(route('login.view'));
+	}
 }

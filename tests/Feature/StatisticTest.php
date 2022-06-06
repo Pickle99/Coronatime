@@ -190,14 +190,14 @@ class StatisticTest extends TestCase
 	public function test_authorized_user_can_access_dashboard_page()
 	{
 		$user = User::factory()->create();
+
 		$this->actingAs($user);
-		$this->get(route('dashboard'))
-		->assertSuccessful();
+
+		$this->get(route('home'))->assertRedirect(route('dashboard'));
 	}
 
 	public function test_unauthorized_user_can_not_access_dashboard_page()
 	{
-		$this->get('/dashboard')
-			->assertRedirect(route('login.view'));
+		$this->get(route('home'))->assertRedirect(route('login.view'));
 	}
 }
